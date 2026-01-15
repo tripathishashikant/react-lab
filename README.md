@@ -71,3 +71,12 @@ export default defineConfig([
   },
 ])
 ```
+
+## AI Usage
+
+AI tools must follow:
+- /.ai/PROJECT_CONTEXT.md
+- /.ai/CODING_RULES.md
+
+Any deviation is a bug.
+
