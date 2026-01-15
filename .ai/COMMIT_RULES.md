@@ -7,9 +7,9 @@ Commits must be readable without opening the code.
 <type>(#issue): short description
 
 Example:
-feat(#12): add main layout shell
-fix(#18): correct sidebar scroll issue
-refactor(#21): simplify route config
+- feat(#12): add main layout shell
+- fix(#18): correct sidebar scroll issue
+- refactor(#21): simplify route config
 
 ## Allowed types
 
