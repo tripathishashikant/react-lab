@@ -1,1 +1,2 @@
-// TODO: Implement Button component
+// src/shared/components/Button/index.js
+export { default } from './Button';

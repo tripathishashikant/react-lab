@@ -22,6 +22,7 @@ AI tools and developers must follow this strictly.
 Everything lives here.
 
 Rule:
+
 - No logic outside `src`
 - No random files
 
@@ -55,6 +56,7 @@ Controls **startup**, **routing**, and **global providers**.
   - Global wrappers
 
 Rule:
+
 - If you import a feature here, you’re doing it wrong
 
 ---
@@ -64,6 +66,7 @@ Rule:
 Layouts define **structure**, not content.
 
 Think:
+
 - Header
 - Sidebar
 - Content area
@@ -73,6 +76,7 @@ Think:
 Used for most screens.
 
 Contains:
+
 - Top header
 - Left sidebar
 - Scrollable content area
@@ -83,6 +87,7 @@ No business logic.
 #### `EmptyLayout/`
 
 Used for:
+
 - Isolated demos
 - Error pages
 - Full-screen experiments
@@ -96,6 +101,7 @@ Layouts decide **where** things go, never **what** they do.
 Each folder = **one React concept**.
 
 Examples:
+
 - `useState`
 - `useEffect`
 - `forms`
@@ -120,6 +126,7 @@ useState/
 - One page per feature
 
 Example:
+
 - `UseStatePage.jsx`
 
 ##### `components/`
@@ -141,12 +148,14 @@ This is where real learning happens.
 Metadata for the feature.
 
 Contains:
+
 - route path
 - title
 - difficulty
 - status
 
 Used by:
+
 - router
 - sidebar
 - feature list
@@ -156,6 +165,7 @@ Used by:
 Public API of the feature.
 
 Exports:
+
 - page
 - route config
 - metadata
@@ -175,12 +185,14 @@ No feature knowledge allowed.
 Dumb UI only.
 
 Examples:
+
 - Button
 - Card
 - Tabs
 - CodeBlock
 
 Rules:
+
 - Props in
 - JSX out
 - No side effects
@@ -190,6 +202,7 @@ Rules:
 Cross-feature hooks.
 
 Examples:
+
 - `useTheme`
 - `useLocalStorage`
 
@@ -200,6 +213,7 @@ If it depends on feature data, it doesn’t belong here.
 Very small primitives.
 
 Examples:
+
 - Badge
 - Loader
 
@@ -210,6 +224,7 @@ Think atoms, not molecules.
 Pure functions.
 
 Examples:
+
 - className helpers
 - formatters
 
@@ -259,6 +274,7 @@ Components use CSS Modules or scoped styles.
 ### `assets/` – Static files
 
 Contains:
+
 - SVG logo
 - Icons
 
@@ -269,10 +285,12 @@ No images inside components directly.
 ## Import rules (important)
 
 Allowed:
+
 - feature → shared
 - app → layouts
 
 Forbidden:
+
 - feature → feature
 - shared → feature
 - layout → feature logic
@@ -307,7 +325,6 @@ Forbidden:
 
 Format:
 <type>(#issue): short description
-
 
 Allowed types:
 
@@ -356,9 +373,9 @@ Rules:
 
 Ask yourself:
 
-1. Will AI know where to put this file?  
-2. Will GitHub workflow track this properly?  
-3. Will the BEM and SMACSS naming convention enforce structure without style bleed?  
-4. Will commits be consistent?  
+1. Will AI know where to put this file?
+2. Will GitHub workflow track this properly?
+3. Will the BEM and SMACSS naming convention enforce structure without style bleed?
+4. Will commits be consistent?
 
 If yes → you have a disciplined, scalable learning project.
