@@ -1,6 +1,7 @@
 # AI Coding Rules
 
 When generating code:
+
 - Follow feature-based structure
 - Respect existing folders
 - Do not invent patterns

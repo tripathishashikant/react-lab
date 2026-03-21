@@ -1,0 +1,11 @@
+.l-main {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--color-background-primary);
+  color: var(--color-text-primary);
+}
+
+.l-main__content {
+  flex-grow: 1;
+  padding: 2rem;
+}
