@@ -35,21 +35,21 @@ Controls **startup**, **routing**, and **global providers**.
 
 #### Files
 
-- `main.tsx`
+- `main.jsx`
   - Entry point
   - Mounts React to DOM
   - Should never change often
 
-- `App.tsx`
+- `App.jsx`
   - High-level app wrapper
   - No UI
   - No feature logic
 
-- `routes.tsx`
+- `routes.jsx`
   - Central routing table
   - Connects layouts with features
 
-- `providers.tsx`
+- `providers.jsx`
   - Theme
   - Context providers
   - Global wrappers
@@ -109,8 +109,8 @@ useState/
 ├── pages/
 ├── components/
 ├── hooks/
-├── config.ts
-└── index.ts
+├── config.js
+└── index.js
 ```
 
 ##### `pages/`
@@ -120,7 +120,7 @@ useState/
 - One page per feature
 
 Example:
-- `UseStatePage.tsx`
+- `UseStatePage.jsx`
 
 ##### `components/`
 
@@ -136,7 +136,7 @@ If another feature needs it, move it to `shared/`.
 
 This is where real learning happens.
 
-##### `config.ts`
+##### `config.js`
 
 Metadata for the feature.
 
@@ -151,7 +151,7 @@ Used by:
 - sidebar
 - feature list
 
-##### `index.ts`
+##### `index.js`
 
 Public API of the feature.
 
@@ -223,14 +223,14 @@ Controls app navigation.
 
 #### Files
 
-- `menu.ts`
+- `menu.js`
   - Builds menu from feature metadata
   - No JSX
 
-- `Sidebar.tsx`
+- `Sidebar.jsx`
   - Renders navigation UI
 
-- `SidebarItem.tsx`
+- `SidebarItem.jsx`
   - Single item
 
 Navigation is data-driven. Not hardcoded.
@@ -266,23 +266,10 @@ No images inside components directly.
 
 ---
 
-### `types/` – Shared TypeScript contracts
-
-Keeps types consistent.
-
-Examples:
-- Feature metadata type
-- Route definitions
-
-If TypeScript types start duplicating, move them here.
-
----
-
 ## Import rules (important)
 
 Allowed:
 - feature → shared
-- feature → types
 - app → layouts
 
 Forbidden:
@@ -292,15 +279,15 @@ Forbidden:
 
 ---
 
-## Tailwind / Style Guide rules
+## CSS / Style Guide Rules (SMACSS + BEM)
 
-- Use **Tailwind only**; no inline CSS
-- Strict tokens: colors, spacing, typography
-- Map all style guide tokens in `tailwind.config.ts`
-- Base components (`Button`, `Card`, `Input`) must use `@apply`
-- Avoid random classes like `mt-7` or `text-gray-500`
-- Global styles in `globals.css`
-- Dark/light themes must use config tokens
+- Use **CSS** with **SMACSS** architecture (Base, Layout, Module, State, Theme) combined with **BEM** naming conventions (`block__element--modifier`).
+- Use modern CSS features heavily: **CSS Grid** and **Flexbox** for layouts.
+- Use native CSS Variables in `styles/variables.css` for strict tokens: colors, spacing, and typography.
+- Use SMACSS prefixes: `l-` for layouts, `c-` for components/modules, `is-`/`has-` for states (e.g., `l-grid`, `c-card`, `is-active`).
+- Feature-specific styles should live inside the feature folder (e.g., `CounterPage.css`) and map to BEM blocks.
+- Global styles, Resets, and Theme variables live in `src/styles/`.
+- No inline CSS.
 
 ---
 
@@ -360,7 +347,7 @@ Rules:
 - Think before coding
 - Close one issue at a time (`p0`)
 - No shortcuts in folder structure
-- All code must pass linting & TypeScript rules
+- All code must pass linting rules
 - AI output = junior dev; you review every line
 
 ---
@@ -371,9 +358,7 @@ Ask yourself:
 
 1. Will AI know where to put this file?  
 2. Will GitHub workflow track this properly?  
-3. Will Tailwind token system enforce style?  
+3. Will the BEM and SMACSS naming convention enforce structure without style bleed?  
 4. Will commits be consistent?  
 
 If yes → you have a disciplined, scalable learning project.
-
-
