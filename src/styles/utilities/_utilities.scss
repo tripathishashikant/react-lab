@@ -1,0 +1,20 @@
+/* TEXT */
+.u-text-center { text-align: center; }
+
+/* FLEX */
+.u-flex { display: flex; }
+.u-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SPACING */
+.u-mt-md { margin-top: var(--space-md); }
+.u-mb-md { margin-bottom: var(--space-md); }
+
+/* WIDTH */
+.u-w-full { width: 100%; }
+
+/* HIDDEN */
+.u-hidden { display: none !important; }

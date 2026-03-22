@@ -1,6 +1,3 @@
-import '@/features/useState/pages/useStatePage.scss'
-
-
 function UseStatePage() {
   return (
     <div className="p-use-state">
