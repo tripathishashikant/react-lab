@@ -7,19 +7,20 @@ Commits must be readable without opening the code.
 <type>(#issue): short description
 
 Example:
-feat(#12): add main layout shell
-fix(#18): correct sidebar scroll issue
-refactor(#21): simplify route config
+
+- feat(#12): add main layout shell
+- fix(#18): correct sidebar scroll issue
+- refactor(#21): simplify route config
 
 ## Allowed types
 
-- feat     → new feature
-- fix      → bug fix
+- feat → new feature
+- fix → bug fix
 - refactor → internal change, no behavior change
-- style    → formatting, Tailwind class changes
-- chore    → tooling, config, scripts
-- docs     → documentation only
-- test     → tests
+- style → formatting, Tailwind class changes
+- chore → tooling, config, scripts
+- docs → documentation only
+- test → tests
 
 No custom types.
 
@@ -72,6 +73,7 @@ BREAKING: refactor routing structure (#27)
 ## Intent
 
 These rules exist to:
+
 - track progress via issues
 - simplify reviews
 - maintain learning clarity

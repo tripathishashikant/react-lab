@@ -1,0 +1,27 @@
+import { NavLink } from "react-router-dom"
+import { features } from "@/features"
+import Logo from "@/shared/components/Logo/Logo";
+
+function Sidebar() {
+  return (
+    <aside className="l-sidebar">
+      <div className="l-sidebar__logo">
+        <Logo />
+      </div>
+      <div className="l-sidebar__divider"></div>
+      <nav className="l-sidebar__nav">
+        {features.map((feature) => (
+          <NavLink
+            key={feature.id}
+            to={feature.path}
+            className="l-sidebar__link"
+          >
+            {feature.title}
+          </NavLink>
+        ))}
+      </nav>
+    </aside>
+  );
+}
+
+export default Sidebar
