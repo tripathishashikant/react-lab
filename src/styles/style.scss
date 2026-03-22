@@ -1,0 +1,22 @@
+@charset 'utf-8';
+
+// 1. Abstracts (variables, functions, mixins)
+@use 'abstract';
+
+// 2. Base styles (reset, global styles)
+@use 'base';
+
+// 3. Themes
+@use 'themes';
+
+// 4. Layout
+@use 'layout';
+
+// 5. Components
+@use 'components';
+
+// 6. Page-specific styles
+@use 'pages';
+
+// 7. Utility classes
+@use 'utilities';

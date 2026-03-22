@@ -1,6 +1,6 @@
 import { createBrowserRouter, redirect } from "react-router-dom"
 
-import MainLayout from "@/layouts/mainLayout/MainLayout"
+import MainLayout from "@/layouts/MainLayout"
 
 import { features } from "@/features";
 

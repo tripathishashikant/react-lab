@@ -1,16 +1,15 @@
 import { NavLink } from "react-router-dom"
 import { features } from "@/features"
+import Logo from "@/shared/components/Logo/Logo";
 
 function Sidebar() {
   return (
     <aside className="l-sidebar">
+      <div className="l-sidebar__logo">
+        <Logo />
+      </div>
+      <div className="l-sidebar__divider"></div>
       <nav className="l-sidebar__nav">
-        <NavLink to="/topics" className="l-sidebar__link" end>
-          All Topics
-        </NavLink>
-
-        <div className="l-sidebar__divider"></div>
-
         {features.map((feature) => (
           <NavLink
             key={feature.id}

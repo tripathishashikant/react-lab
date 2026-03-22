@@ -1,5 +1,3 @@
-import '@/features/topics/pages/topics.scss'
-
 export default function Topics() {
   return (
     <>

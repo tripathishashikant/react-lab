@@ -115,7 +115,6 @@ useState/
 ├── pages/
 ├── components/
 ├── hooks/
-├── config.js
 └── index.js
 ```
 
@@ -244,9 +243,6 @@ Controls app navigation.
 
 - `Sidebar.jsx`
   - Renders navigation UI
-
-- `SidebarItem.jsx`
-  - Single item
 
 Navigation is data-driven. Not hardcoded.
 

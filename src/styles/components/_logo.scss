@@ -1,0 +1,14 @@
+.c-logo {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+
+  &__react {
+    height: 30px;
+  }
+
+  &__lab {
+    height: 22px;
+    margin-left: 10px;
+  }
+}

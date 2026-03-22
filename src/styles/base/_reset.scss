@@ -1,0 +1,78 @@
+/* ================================
+   RESET / NORMALIZE
+================================ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+}
+
+/* Improve text rendering */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Remove list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove default link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Make media responsive */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Form elements inherit font */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Remove button default styles */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Prevent textarea resize issues */
+textarea {
+  resize: vertical;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Remove animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
