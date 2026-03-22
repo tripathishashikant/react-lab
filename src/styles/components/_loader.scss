@@ -1,0 +1,51 @@
+/* ================================
+   LOADER COMPONENT
+================================ */
+
+.c-loader {
+  @include flex(center, center);
+
+  /* ===== SPINNER ===== */
+
+  &__spinner {
+    border: 2px solid var(--color-border);
+    border-top: 2px solid var(--color-primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+
+  /* ===== SIZES ===== */
+
+  &--sm &__spinner {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  &--md &__spinner {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  &--lg &__spinner {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  /* ===== FULLSCREEN ===== */
+
+  &--fullscreen {
+    position: fixed;
+    inset: 0;
+    z-index: z(overlay);
+
+    background: rgba(0, 0, 0, 0.6);
+  }
+}
+
+/* ===== ANIMATION ===== */
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

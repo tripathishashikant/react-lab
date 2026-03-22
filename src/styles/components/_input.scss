@@ -1,0 +1,57 @@
+@use '../abstract';
+
+/* ================================
+   INPUT COMPONENT
+================================ */
+
+.c-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+
+  /* ===== LABEL ===== */
+
+  &__label {
+    font-size: 1.2rem;
+    color: var(--color-text-muted);
+  }
+
+  /* ===== FIELD ===== */
+
+  &__field {
+    @include abstract.input-base;
+    transition: var(--transition-fast);
+
+    &::placeholder {
+      color: var(--color-text-muted);
+      opacity: 0.7;
+    }
+
+    @include abstract.hover-focus {
+      border-color: var(--color-primary);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 1px var(--color-primary);
+    }
+  }
+
+  /* ===== ERROR ===== */
+
+  &__error {
+    font-size: 1.2rem;
+    color: var(--color-danger);
+  }
+
+  /* ===== STATES ===== */
+
+  &--block {
+    width: 100%;
+  }
+
+  &--error &__field {
+    border-color: var(--color-danger);
+  }
+}

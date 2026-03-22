@@ -36,6 +36,23 @@
   }
 }
 
+/* INPUT BASE STYLE */
+@mixin input-base {
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 1.4rem;
+}
+
+/* TEXT STYLE */
+@mixin text($size, $weight: var(--fw-regular), $lh: var(--lh-base)) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $lh;
+}
+
 /* MEDIA QUERY */
 $breakpoints: (
   sm: 480px,

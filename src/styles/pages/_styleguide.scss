@@ -1,0 +1,46 @@
+/* ================================
+   STYLEGUIDE PAGE
+================================ */
+
+.p-styleguide {
+  padding: var(--space-lg);
+
+  &__title {
+    margin-bottom: var(--space-lg);
+  }
+
+  /* ===== GRID ===== */
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+
+    @include respond(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  /* ===== SECTION ===== */
+
+  &__section {
+    @include card;
+    padding: var(--space-md);
+  }
+
+  /* ===== DEMO AREA ===== */
+
+  &__demo {
+    margin-top: var(--space-sm);
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+}
