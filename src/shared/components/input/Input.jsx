@@ -1,22 +1,36 @@
 import '@/shared/components/input/input.scss'
 
 export default function Input({
+  id,
   label,
   error,
   fullWidth = true,
   className = "",
   ...props
 }) {
-  return (
-    <div className={`
-      c-input
-      ${fullWidth ? "c-input--block" : ""}
-      ${error ? "c-input--error" : ""}
-      ${className}
-    `}>
-      {label && <label className="c-input__label">{label}</label>}
+  if (!id) {
+    throw new Error("The 'id' prop is required for the Input component.");
+  }
 
-      <input className="c-input__field" {...props} />
+  const classes = ['c-input'];
+
+  if (fullWidth) {
+    classes.push('c-input--block');
+  }
+
+  if (error) {
+    classes.push('c-input--error');
+  }
+
+  if (className) {
+    classes.push(className);
+  }
+
+  return (
+    <div className={classes.join(' ')}>
+      {label && <label htmlFor={id} className="c-input__label">{label}</label>}
+
+      <input id={id} className="c-input__field" {...props} />
 
       {error && <span className="c-input__error">{error}</span>}
     </div>

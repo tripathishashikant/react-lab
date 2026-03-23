@@ -1,3 +1,5 @@
+@use '@/styles/abstract';
+
 /* ================================
    STYLEGUIDE PAGE
 ================================ */
@@ -16,7 +18,7 @@
     grid-template-columns: 1fr 1fr;
     gap: var(--space-lg);
 
-    @include respond(sm) {
+    @include abstract.respond(sm) {
       grid-template-columns: 1fr;
     }
   }
@@ -30,7 +32,7 @@
   /* ===== SECTION ===== */
 
   &__section {
-    @include card;
+    @include abstract.card;
     padding: var(--space-md);
   }
 

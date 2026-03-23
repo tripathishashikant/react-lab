@@ -1,11 +1,19 @@
-import Button from "@/components/button/Button";
-import Card from "@/components/card/Card";
-import Input from "@/components/input/Input";
-import Alert from "@/components/alert/Alert";
-import Table from "@/components/table/Table";
-import Loader from "@/components/loader/Loader";
+import { useState } from 'react';
+import '@/features/styleguide/pages/styleguide.scss'
+
+import Button from "@/shared/components/button/Button";
+import Card from "@/shared/components/card/Card";
+import Input from "@/shared/components/input/Input";
+import Alert from "@/shared/components/alert/Alert";
+import Table from "@/shared/components/table/Table";
+import Loader from "@/shared/components/loader/Loader";
+import Logo from '@/shared/components/logo/Logo';
+import Modal from '@/shared/components/modal/Modal';
+import Tabs from '@/shared/components/tabs/Tabs';
+import TabItem from '@/shared/components/tabs/TabItem';
 
 export default function StyleguidePage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const tableColumns = [
     { key: "name", title: "Name" },
     { key: "type", title: "Type" },
@@ -39,8 +47,8 @@ export default function StyleguidePage() {
           <section className="p-styleguide__section">
             <h2>Inputs</h2>
             <div className="p-styleguide__demo">
-              <Input label="Name" placeholder="Enter name" />
-              <Input label="Error" error="Required field" />
+              <Input id="name-input" label="Name" placeholder="Enter name" />
+              <Input id="error-input" label="Error" error="Required field" />
             </div>
           </section>
 
@@ -51,6 +59,21 @@ export default function StyleguidePage() {
               <Alert>Info message</Alert>
               <Alert type="success">Success message</Alert>
               <Alert type="error">Error message</Alert>
+            </div>
+          </section>
+
+          {/* TABS */}
+          <section className="p-styleguide__section">
+            <h2>Tabs</h2>
+            <div className="p-styleguide__demo">
+              <Tabs>
+                <TabItem title="Tab 1">
+                  <p>Tab 1 content</p>
+                </TabItem>
+                <TabItem title="Tab 2">
+                  <p>Tab 2 content</p>
+                </TabItem>
+              </Tabs>
             </div>
           </section>
 
@@ -82,6 +105,29 @@ export default function StyleguidePage() {
               <Loader />
               <Loader size="sm" />
               <Loader size="lg" />
+            </div>
+          </section>
+
+          {/* LOGO */}
+          <section className="p-styleguide__section">
+            <h2>Logo</h2>
+            <div className="p-styleguide__demo">
+              <Logo />
+            </div>
+          </section>
+
+          {/* MODAL */}
+          <section className="p-styleguide__section">
+            <h2>Modal</h2>
+            <div className="p-styleguide__demo">
+              <Button onClick={() => setIsModalOpen(true)}>Open Modal</Button>
+              <Modal
+                title="Modal Title"
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+              >
+                <p>Modal content</p>
+              </Modal>
             </div>
           </section>
 

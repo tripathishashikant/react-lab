@@ -42,7 +42,7 @@
 
   &__error {
     font-size: 1.2rem;
-    color: var(--color-danger);
+    color: var(--color-error);
   }
 
   /* ===== STATES ===== */
@@ -52,6 +52,12 @@
   }
 
   &--error &__field {
-    border-color: var(--color-danger);
+    border-color: var(--color-error);
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-error);
+      box-shadow: 0 0 0 1px var(--color-error);
+    }
   }
 }

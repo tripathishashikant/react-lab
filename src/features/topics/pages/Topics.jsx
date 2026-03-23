@@ -1,3 +1,5 @@
+import '@/features/topics/pages/topics.scss'
+
 import Alert from '@/shared/components/alert/Alert';
 import Button from '@/shared/components/button/Button';
 

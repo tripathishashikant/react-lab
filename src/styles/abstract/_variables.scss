@@ -1,12 +1,12 @@
 :root {
   /* BACKGROUND */
-  --color-bg: #0f1117;
-  --color-surface: #1e222a;
-  --color-surface-light: #252a34;
+  --color-bg: var(--color-black-russian);
+  --color-surface: var(--color-vulcan);
+  --color-surface-light: var(--color-charade);
 
   /* TEXT */
-  --color-text: #ffffff;
-  --color-text-muted: #9ca3af;
+  --color-text: var(--color-white);
+  --color-text-muted: var(--color-manatee);
 
   /* FONT */
   --font-primary: "Inter", system-ui, sans-serif;
@@ -29,13 +29,13 @@
   --lh-tight: 1.3;
 
   /* BORDER */
-  --color-border: #2a2f3a;
+  --color-border: var(--color-tuna);
 
   /* PRIMARY */
-  --color-primary: #ff8c00;
+  --color-primary: var(--color-dark-orange);
 
   /* BADGE */
-  --color-primary-soft: rgba(255, 140, 0, 0.15);
+  --color-primary-soft: var(--color-dark-orange-15);
 
   /* RADIUS */
   --radius-sm: 6px;
@@ -48,14 +48,17 @@
   --space-lg: 24px;
 
   /* ALERT COLORS */
-  --color-info: #3b82f6;
-  --color-info-soft: rgba(59, 130, 246, 0.1);
+  --color-info: var(--color-dodger-blue);
+  --color-info-soft: var(--color-dodger-blue-10);
 
-  --color-success: #22c55e;
-  --color-success-soft: rgba(34, 197, 94, 0.1);
+  --color-success: var(--color-islamic-green);
+  --color-success-soft: var(--color-islamic-green-10);
 
-  --color-warning: #eab308;
-  --color-warning-soft: rgba(234, 179, 8, 0.1);
+  --color-warning: var(--color-marigold);
+  --color-warning-soft: var(--color-marigold-10);
+
+  --color-error: var(--color-red);
+  --color-error-soft: rgba(239, 68, 68, 0.1);
 
   /* TRANSITIONS */
   --transition-fast: 0.2s ease;

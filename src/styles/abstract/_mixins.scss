@@ -17,7 +17,8 @@
 /* HOVER / FOCUS */
 @mixin hover-focus {
   &:hover,
-  &:focus {
+  &:focus,
+  &.active {
     @content;
   }
 }

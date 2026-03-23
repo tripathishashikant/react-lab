@@ -1,6 +1,6 @@
 import Styleguide from '@/features/styleguide/pages/Styleguide'
 
-export const topics = {
+export const styleguide = {
   id: 'styleguide',
   path: '/styleguide',
   component: Styleguide,
