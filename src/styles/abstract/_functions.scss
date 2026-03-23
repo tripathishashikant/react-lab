@@ -1,4 +1,6 @@
 /* PX → REM */
+@use 'sass:map';
+
 @function rem($px) {
   @return ($px / 10) * 1rem;
 }
@@ -12,5 +14,5 @@
     modal: 1100
   );
 
-  @return map-get($map, $level);
+  @return map.get($map, $level);
 }

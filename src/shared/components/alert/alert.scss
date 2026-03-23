@@ -1,0 +1,59 @@
+@use '@/styles/abstract';
+
+/* ================================
+   ALERT COMPONENT
+================================ */
+
+.c-alert {
+  @include abstract.flex(center, space-between);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+
+  border: 1px solid transparent;
+
+  /* ===== CONTENT ===== */
+
+  &__content {
+    color: var(--color-text);
+  }
+
+  /* ===== CLOSE BUTTON ===== */
+
+  &__close {
+    margin-left: var(--space-sm);
+    font-size: 1.4rem;
+    color: inherit;
+    cursor: pointer;
+
+    @include abstract.hover-focus {
+      opacity: 0.8;
+    }
+  }
+
+  /* ===== VARIANTS ===== */
+
+  &--info {
+    background: var(--color-info-soft);
+    border-color: var(--color-info);
+    color: var(--color-info);
+  }
+
+  &--success {
+    background: var(--color-success-soft);
+    border-color: var(--color-success);
+    color: var(--color-success);
+  }
+
+  &--warning {
+    background: var(--color-warning-soft);
+    border-color: var(--color-warning);
+    color: var(--color-warning);
+  }
+
+  &--error {
+    background: var(--color-danger-soft);
+    border-color: var(--color-danger);
+    color: var(--color-danger);
+  }
+}

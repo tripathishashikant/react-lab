@@ -1,9 +1,10 @@
-import { useState } from 'react'
-import './Tabs.scss'; // Import SCSS for Tabs
-import Button from "@/shared/components/Button"; // Import the new Button component
-console.log(Button)
-export default function Tabs({ tabs }) {
-  const [activeTab, setActiveTab] = useState(0)
+import { useState, Children, isValidElement } from 'react';
+import '@/shared/components/tabs/tabs.scss';
+import Button from '@/shared/components/button/Button';
+
+export default function Tabs({ children }) {
+  const [activeTab, setActiveTab] = useState(0);
+  const tabs = Children.toArray(children).filter(child => isValidElement(child));
 
   return (
     <div className="c-tabs">
@@ -11,16 +12,17 @@ export default function Tabs({ tabs }) {
         {tabs.map((tab, index) => (
           <Button
             key={index}
+            variant="ghost"
             className={`c-tabs__tab ${index === activeTab ? 'is-active' : ''}`}
             onClick={() => setActiveTab(index)}
           >
-            {tab.label}
+            {tab.props.title}
           </Button>
         ))}
       </div>
       <div className="c-tabs__content">
-        {tabs[activeTab].content}
+        {tabs[activeTab]}
       </div>
     </div>
-  )
+  );
 }

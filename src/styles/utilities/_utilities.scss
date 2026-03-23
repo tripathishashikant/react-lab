@@ -18,3 +18,17 @@
 
 /* HIDDEN */
 .u-hidden { display: none !important; }
+
+/* FONT SIZE */
+.u-text-xs { font-size: var(--text-xs); }
+.u-text-sm { font-size: var(--text-sm); }
+.u-text-md { font-size: var(--text-md); }
+.u-text-lg { font-size: var(--text-lg); }
+
+/* WEIGHT */
+.u-fw-medium { font-weight: var(--fw-medium); }
+.u-fw-semibold { font-weight: var(--fw-semibold); }
+
+/* COLOR */
+.u-text-muted { color: var(--color-text-muted); }
+.u-text-primary { color: var(--color-primary); }
