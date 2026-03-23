@@ -1,9 +1,11 @@
+@use '@/styles/abstract';
+
 /* ================================
    ALERT COMPONENT
 ================================ */
 
 .c-alert {
-  @include flex(center, space-between);
+  @include abstract.flex(center, space-between);
   padding: var(--space-sm) var(--space-md);
   border-radius: var(--radius-sm);
   font-size: var(--text-sm);
@@ -24,7 +26,7 @@
     color: inherit;
     cursor: pointer;
 
-    @include hover-focus {
+    @include abstract.hover-focus {
       opacity: 0.8;
     }
   }

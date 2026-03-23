@@ -1,3 +1,5 @@
+import '@/shared/components/button/button.scss'
+
 export default function Button({
   children,
   variant = "primary",

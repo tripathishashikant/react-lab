@@ -1,3 +1,5 @@
+import '@/shared/components/card/card.scss'
+
 export default function Card({
   children,
   title,

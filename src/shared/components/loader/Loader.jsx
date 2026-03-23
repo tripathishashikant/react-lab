@@ -1,3 +1,5 @@
+import '@/shared/components/loader/loader.scss'
+
 export default function Loader({
   variant = "spinner",
   size = "md",

@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import './Tabs.scss'; // Import SCSS for Tabs
-import Button from "@/shared/components/Button"; // Import the new Button component
-console.log(Button)
+import '@/shared/components/tabs/tabs.scss'
+
+import Button from "@/shared/components/Button";
+
 export default function Tabs({ tabs }) {
   const [activeTab, setActiveTab] = useState(0)
 

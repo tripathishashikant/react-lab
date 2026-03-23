@@ -1,3 +1,5 @@
+import '@/shared/components/alert/alert.scss'
+
 export default function Alert({
   type = "info",
   children,

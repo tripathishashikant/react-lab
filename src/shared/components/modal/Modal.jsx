@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import '@/shared/components/modal/modal.scss'
 
 export default function Modal({
   isOpen,

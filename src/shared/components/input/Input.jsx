@@ -1,3 +1,5 @@
+import '@/shared/components/input/input.scss'
+
 export default function Input({
   label,
   error,

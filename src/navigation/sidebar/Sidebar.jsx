@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom"
+import '@/navigation/sidebar/sidebar.scss'
+
 import { features } from "@/features"
 import Logo from "@/shared/components/Logo/Logo";
 

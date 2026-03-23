@@ -1,3 +1,5 @@
+import '@/shared/components/table/table.scss'
+
 export default function Table({ columns = [], data = [] }) {
   return (
     <div className="c-table">

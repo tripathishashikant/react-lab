@@ -1,9 +1,11 @@
+@use '@/styles/abstract';
+
 /* ================================
    LOADER COMPONENT
 ================================ */
 
 .c-loader {
-  @include flex(center, center);
+  @include abstract.flex(center, center);
 
   /* ===== SPINNER ===== */
 
