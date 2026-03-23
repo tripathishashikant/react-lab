@@ -1,0 +1,21 @@
+@use '@/styles/abstract';
+
+.c-logo {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+
+  &__react-image {
+    margin-right: 1rem;
+    height: 3rem;
+  }
+
+  &__text-react {
+    font-size: 1.4em;
+  }
+
+  &__lab {
+    font-size: 1.4em;
+    color: var(--color-dodger-blue)
+  }
+}

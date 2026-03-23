@@ -1,0 +1,82 @@
+@use '@/styles/abstract';
+
+/* ================================
+   BUTTON COMPONENT
+================================ */
+
+.c-button {
+  @include abstract.flex(center, center);
+  @include abstract.hover-focus {
+    filter: brightness(1.05);
+  }
+
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+
+  border: 1px solid transparent;
+
+  /* ===== VARIANTS ===== */
+
+  &--primary {
+    background: var(--color-primary);
+    color: #fff;
+
+    &:hover {
+      filter: brightness(1.1);
+    }
+  }
+
+  &--secondary {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+
+    &:hover {
+      background: var(--color-surface-light);
+    }
+  }
+
+  &--ghost {
+    background: transparent;
+    color: var(--color-text-muted);
+
+    &:hover {
+      background: var(--color-surface-light);
+      color: var(--color-text);
+    }
+  }
+
+  /* ===== SIZES ===== */
+
+  &--sm {
+    font-size: 1.2rem;
+    padding: 0.6rem 1.2rem;
+  }
+
+  &--md {
+    font-size: 1.4rem;
+    padding: 0.8rem 1.6rem;
+  }
+
+  &--lg {
+    font-size: 1.6rem;
+    padding: 1rem 2rem;
+  }
+
+  /* ===== BLOCK ===== */
+
+  &--block {
+    width: 100%;
+  }
+
+  /* ===== STATES ===== */
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}

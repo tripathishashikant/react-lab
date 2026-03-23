@@ -9,9 +9,9 @@ html {
 
 /* Body base */
 body {
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
-  font-size: 1.4rem; // 14px
-  line-height: 1.5;
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  line-height: var(--lh-base);
 
   background: var(--color-bg);
   color: var(--color-text);
@@ -34,35 +34,27 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 600;
-  line-height: 1.3;
+  font-weight: var(--fw-semibold);
+  line-height: var(--lh-tight);
   color: var(--color-text);
 }
 
-h1 {
-  font-size: 2.8rem; // 28px
-}
+h1 { font-size: var(--text-2xl); }
+h2 { font-size: var(--text-xl); }
+h3 { font-size: var(--text-lg); }
+h4 { font-size: var(--text-md); }
 
-h2 {
-  font-size: 2.2rem; // 22px
-}
-
-h3 {
-  font-size: 1.8rem; // 18px
-}
-
-h4 {
-  font-size: 1.6rem; // 16px
-}
+/* PARAGRAPH */
 
 p {
-  font-size: 1.4rem;
+  font-size: var(--text-sm);
   color: var(--color-text-muted);
 }
 
-/* Small text */
+/* SMALL TEXT */
+
 small {
-  font-size: 1.2rem;
+  font-size: var(--text-xs);
   color: var(--color-text-muted);
 }
 
