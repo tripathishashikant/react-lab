@@ -1,14 +1,38 @@
-import '@/features/useState/pages/useState.scss'
+import { Link, useMatches } from 'react-router-dom';
+
+import Card from '@/shared/components/card/Card';
+import { useShuffledArray } from '@/shared/hooks/useShuffledArray';
+
+import '@/features/useState/pages/useState.scss';
 
 function UseStatePage() {
+  const matches = useMatches();
+  const { handle } = matches[matches.length - 1] || {};
+  const { feature } = handle || {};
+  const examples = feature?.examples || [];
+
+  const shuffledExamples = useShuffledArray(examples);
+
   return (
     <div className="p-use-state">
-      <h1 className="p__title p-use-state__title"><code>useState</code> Hook</h1>
-      <p className="p__description p-use-state__description">
-        The <code>useState</code> hook allows you to add state to functional components.
-      </p>
+      <div className="p-use-state__list u-masonry-container">
+        {shuffledExamples.map((example) => (
+          <Card
+            key={example.id}
+            title={example.title}
+            className="u-masonry-item"
+            action={
+              <Link to={example.path} className="c-button c-button--primary">
+                View
+              </Link>
+            }
+          >
+            <p>{example.description}</p>
+          </Card>
+        ))}
+      </div>
     </div>
   );
 }
 
-export default UseStatePage
+export default UseStatePage;

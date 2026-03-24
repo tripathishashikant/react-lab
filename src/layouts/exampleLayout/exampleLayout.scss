@@ -1,0 +1,19 @@
+.example-layout {
+  pre {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+
+  &__component {
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 0.25rem;
+  }
+
+  &__notes {
+    padding: 1rem;
+  }
+}
