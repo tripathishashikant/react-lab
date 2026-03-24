@@ -22,6 +22,10 @@ function Sidebar() {
           </NavLink>
         ))}
       </nav>
+      <div className="l-sidebar__divider"></div>
+      <footer className="l-sidebar__footer">
+        <p>&copy; {new Date().getFullYear()} React Lab</p>
+      </footer>
     </aside>
   );
 }

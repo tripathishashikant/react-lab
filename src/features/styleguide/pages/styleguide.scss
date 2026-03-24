@@ -1,17 +1,9 @@
 @use '@/styles/abstract';
 
-/* ================================
-   STYLEGUIDE PAGE
-================================ */
-
 .p-styleguide {
-  padding: var(--space-lg);
-
   &__title {
     margin-bottom: var(--space-lg);
   }
-
-  /* ===== GRID ===== */
 
   &__grid {
     display: grid;
@@ -29,14 +21,10 @@
     gap: var(--space-lg);
   }
 
-  /* ===== SECTION ===== */
-
   &__section {
     @include abstract.card;
     padding: var(--space-md);
   }
-
-  /* ===== DEMO AREA ===== */
 
   &__demo {
     margin-top: var(--space-sm);

@@ -4,7 +4,7 @@ export const useStateFeature = {
   id: 'use-state',
   path: '/use-state',
   component: UseStatePage,
-  title: 'useState Hook',
+  title: 'useState',
   difficulty: 'easy',
   category: 'hook',
 }
