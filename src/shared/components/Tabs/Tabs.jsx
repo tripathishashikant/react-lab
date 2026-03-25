@@ -3,6 +3,7 @@ import '@/shared/components/tabs/tabs.scss';
 import Button from '@/shared/components/button/Button';
 
 export default function Tabs({ children }) {
+  console.log('children ', children)
   const [activeTab, setActiveTab] = useState(0);
   const tabs = Children.toArray(children).filter(child => isValidElement(child));
 

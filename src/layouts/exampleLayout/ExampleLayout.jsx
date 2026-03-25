@@ -1,7 +1,8 @@
 import Tabs from '@/shared/components/tabs/Tabs';
 import TabItem from '@/shared/components/tabs/TabItem';
+import Code from '@/shared/components/code/Code';
 
-import './exampleLayout.scss';
+import '@/layouts/exampleLayout/exampleLayout.scss';
 
 const ExampleLayout = ({ exampleComponent, code, notes }) => {
   return (
@@ -13,9 +14,7 @@ const ExampleLayout = ({ exampleComponent, code, notes }) => {
           </div>
         </TabItem>
         <TabItem title="Code">
-          <pre>
-            <code>{code}</code>
-          </pre>
+          <Code code={code} />
         </TabItem>
         {notes && (
           <TabItem title="Notes">

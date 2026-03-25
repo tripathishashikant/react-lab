@@ -1,0 +1,17 @@
+@use '@/styles/abstract';
+
+.counter {
+  &__title {
+    color: var(--color-counter-text);
+    margin-bottom: 2rem;
+  }
+
+  &__actions {
+    @include abstract.flex('flex-start', 'space-evenly', 'row', 1rem)
+  }
+
+  &__button {
+    padding:0.5rem 2rem;
+    border-radius: 0.5rem;
+  }
+}

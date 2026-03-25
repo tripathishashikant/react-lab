@@ -1,19 +1,32 @@
-import { Outlet, useMatches } from 'react-router-dom';
-import './featureLayout.scss';
+import { Outlet, useMatches, useNavigate } from 'react-router-dom';
+
+import Button from '@/shared/components/button/Button';
+
+import '@/layouts/featureLayout/featureLayout.scss';
+
 
 const FeatureLayout = () => {
   const matches = useMatches();
+  const navigate = useNavigate();
+
   const { handle } = matches[matches.length - 1] || {};
   const { feature, example } = handle || {};
   const { title, description } = example || feature || {};
 
+  const handleGoBack = () => {
+    navigate(-1)
+  }
+
   return (
-    <div className="feature-layout">
-      <div className="feature-header">
-        <h1>{title}</h1>
-        {description && <p>{description}</p>}
+    <div className="feature__layout">
+      <div className="feature__header">
+        <section className="feature__info">
+          <h1 className="feature__title">{title}</h1>
+          {description && <p className="feature__description">{description}</p>}
+        </section>
+        {example && <Button variant='icon' title='Click to go back' onClick={handleGoBack} className='feature__go-back-icon'>&larr;</Button>}
       </div>
-      <div className="feature-content">
+      <div className="feature__content">
         <Outlet />
       </div>
     </div>
