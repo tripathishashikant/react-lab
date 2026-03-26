@@ -5,6 +5,7 @@ export default function Button({
   variant = "primary",
   size = "md",
   fullWidth = false,
+  className,
   ...props
 }) {
   return (
@@ -14,6 +15,7 @@ export default function Button({
         c-button--${variant}
         c-button--${size}
         ${fullWidth ? "c-button--block" : ""}
+        ${className}
       `}
       {...props}
     >

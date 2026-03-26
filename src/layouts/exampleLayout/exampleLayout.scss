@@ -1,0 +1,21 @@
+.example-layout {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background-color: var(--color-ebony-clay);
+
+  pre {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+
+  &__component {
+    padding: 1rem;
+    border-radius: 0.25rem;
+  }
+
+  &__notes {
+    padding: 1rem;
+  }
+}
