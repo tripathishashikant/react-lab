@@ -1,0 +1,14 @@
+@use '@/styles/abstract/functions';
+
+.c-code {
+  position: relative;
+
+  &__button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: functions.z(base);
+    color: var(--color-text);
+    cursor: pointer;
+  }
+}
