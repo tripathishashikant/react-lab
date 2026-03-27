@@ -6,6 +6,7 @@ export default {
   path: 'toggle-visibility',
   title: 'Toggle Visibility',
   description: 'A component that toggles the visibility of an element using `useState`.',
+  difficulty: 'difficult',
   component: ToggleVisibility,
   code,
 }

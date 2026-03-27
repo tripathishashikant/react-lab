@@ -1,8 +1,11 @@
 import '@/shared/components/card/card.scss'
 
+import Badge from '@/shared/components/badge/Badge'
+
 export default function Card({
   children,
   title,
+  difficulty,
   action,
   className = "",
   ...props
@@ -10,15 +13,19 @@ export default function Card({
   return (
     <div className={`c-card ${className}`} {...props}>
       {(title || action) && (
-        <div className="c-card__header">
+        <header className="c-card__header">
           {title && <h3 className="c-card__title">{title}</h3>}
-          {action && <div className="c-card__action">{action}</div>}
-        </div>
+          {difficulty && <Badge level={difficulty} />}
+        </header>
       )}
 
-      <div className="c-card__body">
+      <section className="c-card__body">
         {children}
-      </div>
+      </section>
+
+      <footer className="c-card__footer">
+        {action && <div className="c-card__action">{action}</div>}
+      </footer>
     </div>
   );
 }

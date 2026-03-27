@@ -52,7 +52,7 @@ export const routes = [
     children: [
       {
         index: true,
-        loader: () => redirect("/topics"),
+        loader: () => redirect("/use-state"),
       },
       {
         path: "",
