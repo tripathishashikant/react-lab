@@ -37,7 +37,13 @@
   /* ===== BODY ===== */
 
   &__body {
-    padding: var(--space-md);
+    padding: var(--space-xs);
+  }
+
+  /* ===== FOOTER ===== */
+
+  &__footer {
+    padding: var(--space-xs);
   }
 
   /* ===== MODIFIERS ===== */

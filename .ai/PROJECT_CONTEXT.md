@@ -144,7 +144,9 @@ This is where real learning happens.
 
 ##### `config.js`
 
-Metadata for the feature.
+##### `index.js`
+
+Metadata for the feature (previously `config.js`).
 
 Contains:
 
@@ -161,7 +163,7 @@ Used by:
 
 ##### `index.js`
 
-Public API of the feature.
+Public API of the feature (and holds metadata).
 
 Exports:
 
@@ -169,7 +171,7 @@ Exports:
 - route config
 - metadata
 
-Other parts of the app see features only through this file.
+Other parts of the app see features only through this file. Feature metadata is now held here.
 
 ---
 

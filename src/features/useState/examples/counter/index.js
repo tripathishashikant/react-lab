@@ -6,6 +6,7 @@ export default {
   path: 'counter',
   title: 'Counter',
   description: 'A simple counter example to demonstrate the basic usage of `useState`.',
+  difficulty: 'easy',
   component: Counter,
   code,
 }
