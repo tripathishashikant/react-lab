@@ -18,9 +18,10 @@ function UseStatePage() {
       <div className="p-use-state__list u-masonry-container">
         {shuffledExamples.map((example) => (
           <Card
+            className="u-masonry-item"
             key={example.id}
             title={example.title}
-            className="u-masonry-item"
+            difficulty={example.difficulty}
             action={
               <Link to={example.path} className="c-button c-button--primary">
                 View

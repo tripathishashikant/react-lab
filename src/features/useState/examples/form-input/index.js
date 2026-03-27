@@ -6,6 +6,7 @@ export default {
   path: 'form-input',
   title: 'Form Input',
   description: 'An example of using `useState` to manage the state of a form input field.',
+  difficulty: 'medium',
   component: FormInput,
   code,
 }
