@@ -25,7 +25,7 @@ const FeatureLayout = () => {
           <h1 className="feature__title">{title}</h1>
           {description && <p className="feature__description">{description}</p>}
         </section>
-        {example && <Button variant='icon' title='Click to go back' onClick={handleGoBack} className='feature__go-back-icon'><FiChevronLeft /></Button>}
+        {example && <Button tabindex='0' variant='icon' title='Click to go back' onClick={handleGoBack} className='feature__go-back-icon'><FiChevronLeft /></Button>}
       </div>
       <div className="feature__content">
         <Outlet />
