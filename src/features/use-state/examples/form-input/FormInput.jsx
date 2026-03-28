@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Input from '@/shared/components/input/Input.jsx';
+import Input from '@/shared/components/input/Input';
 
 export default function FormInput() {
   const [value, setValue] = useState('');

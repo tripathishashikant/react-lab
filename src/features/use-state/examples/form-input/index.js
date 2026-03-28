@@ -1,5 +1,5 @@
-import FormInput from '@/features/useState/examples/form-input/FormInput.jsx'
-import code from '@/features/useState/examples/form-input/FormInput.jsx?raw'
+import FormInput from '@/features/use-state/examples/form-input/FormInput'
+import code from '@/features/use-state/examples/form-input/FormInput.jsx?raw'
 
 export default {
   id: 'form-input',

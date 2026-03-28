@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom"
 import '@/navigation/sidebar/sidebar.scss'
 
-import { features } from "@/features/index.js"
-import Logo from "@/shared/components/logo/Logo.jsx";
+import { features } from "@/features"
+import Logo from "@/shared/components/logo/Logo";
 
 function Sidebar() {
   return (

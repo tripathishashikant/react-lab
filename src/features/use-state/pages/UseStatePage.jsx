@@ -1,9 +1,7 @@
 import { Link, useMatches } from 'react-router-dom';
 
-import Card from '@/shared/components/card/Card.jsx';
-import { useShuffledArray } from '@/shared/hooks/useShuffledArray.js';
-
-import '@/features/useState/pages/useState.scss';
+import Card from '@/shared/components/card/Card';
+import { useShuffledArray } from '@/shared/hooks/useShuffledArray';
 
 function UseStatePage() {
   const matches = useMatches();

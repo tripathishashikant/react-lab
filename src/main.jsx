@@ -1,8 +1,8 @@
 import { createRoot } from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 
-import router from "@/app/router.jsx";
-import Loader from "@/shared/components/loader/Loader.jsx";
+import router from "@/app/router";
+import Loader from "@/shared/components/loader/Loader";
 
 import "@/styles/style.scss";
 
