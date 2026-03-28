@@ -1,6 +1,6 @@
 import { useState, Children, isValidElement } from 'react';
 import '@/shared/components/tabs/tabs.scss';
-import Button from '@/shared/components/button/Button.jsx';
+import Button from '@/shared/components/button/Button';
 
 export default function Tabs({ children }) {
   console.log('children ', children)

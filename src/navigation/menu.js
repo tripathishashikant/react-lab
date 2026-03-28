@@ -1,4 +1,4 @@
-import { features, topicsFeature } from '@/features/index.js'
+import { features, topicsFeature } from '@/features'
 
 // This function generates the menu structure for the sidebar.
 // It uses the 'features' array as the single source of truth.

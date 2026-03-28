@@ -1,11 +1,11 @@
 import { createBrowserRouter, redirect } from 'react-router-dom'
 
-import MainLayout from '@/layouts/mainLayout/MainLayout.jsx'
-import FeatureLayout from '@/layouts/featureLayout/FeatureLayout.jsx'
-import ExampleLayout from '@/layouts/exampleLayout/ExampleLayout.jsx'
-import NotFoundPage from '@/features/notFound/pages/NotFoundPage.jsx'
+import MainLayout from '@/layouts/mainLayout/MainLayout'
+import FeatureLayout from '@/layouts/featureLayout/FeatureLayout'
+import ExampleLayout from '@/layouts/exampleLayout/ExampleLayout'
+import NotFoundPage from '@/features/notFound/pages/NotFoundPage'
 
-import { features } from '@/features/index.js'
+import { features } from '@/features'
 
 const featureRoutes = features.map(f => {
   const route = {

@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import '@/features/styleguide/pages/styleguide.scss';
 
-import Button from '@/shared/components/button/Button.jsx';
-import Card from '@/shared/components/card/Card.jsx';
-import Input from '@/shared/components/input/Input.jsx';
-import Alert from '@/shared/components/alert/Alert.jsx';
-import Table from '@/shared/components/table/Table.jsx';
-import Loader from '@/shared/components/loader/Loader.jsx';
-import Logo from '@/shared/components/logo/Logo.jsx';
-import Modal from '@/shared/components/modal/Modal.jsx';
-import Tabs from '@/shared/components/tabs/Tabs.jsx';
-import TabItem from '@/shared/components/tabs/TabItem.jsx';
+import Button from '@/shared/components/button/Button';
+import Card from '@/shared/components/card/Card';
+import Input from '@/shared/components/input/Input';
+import Alert from '@/shared/components/alert/Alert';
+import Table from '@/shared/components/table/Table';
+import Loader from '@/shared/components/loader/Loader';
+import Logo from '@/shared/components/logo/Logo';
+import Modal from '@/shared/components/modal/Modal';
+import Tabs from '@/shared/components/tabs/Tabs';
+import TabItem from '@/shared/components/tabs/TabItem';
 import { useShuffledArray } from '@/shared/hooks/useShuffledArray.js';
 
 export default function StyleguidePage() {

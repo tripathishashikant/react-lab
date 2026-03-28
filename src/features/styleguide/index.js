@@ -1,4 +1,4 @@
-import Styleguide from '@/features/styleguide/pages/Styleguide.jsx'
+import Styleguide from '@/features/styleguide/pages/Styleguide'
 
 export const styleguide = {
   id: 'styleguide',

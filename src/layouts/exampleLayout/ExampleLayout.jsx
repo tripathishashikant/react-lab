@@ -1,6 +1,6 @@
-import Tabs from '@/shared/components/tabs/Tabs.jsx';
-import TabItem from '@/shared/components/tabs/TabItem.jsx';
-import Code from '@/shared/components/code/Code.jsx';
+import Tabs from '@/shared/components/tabs/Tabs';
+import TabItem from '@/shared/components/tabs/TabItem';
+import Code from '@/shared/components/code/Code';
 
 import '@/layouts/exampleLayout/exampleLayout.scss';
 

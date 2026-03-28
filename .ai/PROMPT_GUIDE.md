@@ -27,7 +27,7 @@ Context:
 - Project: ReactLab
 - Reference files: [PROJECT_CONTEXT.md](./.ai/PROJECT_CONTEXT.md), [COMMIT_RULES.md](./.ai/COMMIT_RULES.md), [CODING_RULES.md](./.ai/CODING_RULES.md)
 - Tech stack: React + SCSS
-- Target feature folder: /features/useState/pages/
+- Target feature folder: /features/use-state/pages/
 
 Task:
 Create CounterPage with increment and decrement buttons.

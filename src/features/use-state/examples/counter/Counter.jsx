@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Button from '@/shared/components/button/Button.jsx';
+import Button from '@/shared/components/button/Button';
 
-import '@/features/useState/examples/counter/counter.scss'
+import '@/features/use-state/examples/counter/counter.scss'
 
 export default function Counter() {
   const [count, setCount] = useState(0);
