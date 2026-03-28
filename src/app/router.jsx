@@ -1,12 +1,13 @@
-import { createBrowserRouter, redirect } from "react-router-dom"
+import { createBrowserRouter, redirect } from 'react-router-dom'
 
-import MainLayout from "@/layouts/mainLayout/MainLayout"
-import FeatureLayout from "@/layouts/featureLayout/FeatureLayout";
-import ExampleLayout from "@/layouts/exampleLayout/ExampleLayout";
+import MainLayout from '@/layouts/mainLayout/MainLayout'
+import FeatureLayout from '@/layouts/featureLayout/FeatureLayout'
+import ExampleLayout from '@/layouts/exampleLayout/ExampleLayout'
+import NotFoundPage from '@/features/notFound/pages/NotFoundPage'
 
-import { features } from "@/features";
+import { features } from '@/features'
 
-const featureRoutes = features.map((f) => {
+const featureRoutes = features.map(f => {
   const route = {
     id: f.id,
     path: f.path,
@@ -21,10 +22,10 @@ const featureRoutes = features.map((f) => {
         },
       },
     ],
-  };
+  }
 
   if (f.examples) {
-    const exampleRoutes = f.examples.map((example) => ({
+    const exampleRoutes = f.examples.map(example => ({
       path: example.path,
       handle: {
         feature: f,
@@ -37,29 +38,32 @@ const featureRoutes = features.map((f) => {
           notes={example.notes}
         />
       ),
-    }));
-    route.children.push(...exampleRoutes);
+    }))
+    route.children.push(...exampleRoutes)
   }
 
-  return route;
-});
-
+  return route
+})
 
 export const routes = [
   {
-    path: "/",
+    path: '/',
     Component: MainLayout,
     children: [
       {
         index: true,
-        loader: () => redirect("/use-state"),
+        loader: () => redirect('/use-state'),
       },
       {
-        path: "",
+        path: '',
         Component: FeatureLayout,
         children: featureRoutes,
       },
-    ]
+      {
+        path: '*',
+        Component: NotFoundPage,
+      },
+    ],
   },
 ]
 
