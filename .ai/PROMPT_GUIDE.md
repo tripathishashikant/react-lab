@@ -4,42 +4,21 @@ Context:
 
 - Project: ReactLab
 - Reference files: [PROJECT_CONTEXT.md](./.ai/PROJECT_CONTEXT.md), [COMMIT_RULES.md](./.ai/COMMIT_RULES.md), [CODING_RULES.md](./.ai/CODING_RULES.md)
-- Tech stack: React + Vite + Tailwind
+- Tech stack: React + Vite + SCSS
 - Folder & architecture rules: follow feature-based structure
-- Style rules: use Tailwind tokens and shared components
+- Style rules: use SCSS variables and shared components
 - GitHub workflow: priority labels, issue tracking, milestones (informational only)
 
 Task:
-<Describe exactly what you want to implement, e.g., add Tailwind to project or create a new component>
+<Describe exactly what you want to implement, e.g., create a new component>
 
 Rules:
 
 - Follow project folder structure strictly
 - Do not break import rules
 - Use shared components and hooks if applicable
-- All styling must follow Tailwind tokens and config
+- All styling must follow SCSS variables and config
 - Ask if something is unclear before implementing
-
-## Example: Adding Tailwind
-
-Context:
-
-- Project: ReactLab
-- Reference files: [PROJECT_CONTEXT.md](./.ai/PROJECT_CONTEXT.md), [COMMIT_RULES.md](./.ai/COMMIT_RULES.md), [CODING_RULES.md](./.ai/CODING_RULES.md)
-- Tech stack: React + Vite
-- Existing styling: none yet, planning to use Tailwind
-
-Task:
-Add Tailwind CSS to the project.
-
-Rules:
-
-- Configure tailwind.config.js using design tokens from PROJECT_CONTEXT.md
-- Add base global styles in styles/globals.css
-- Ensure postcss.config.js and main.jsx are configured to load Tailwind
-- Verify that default App renders using Tailwind classes
-- No other library additions
-- Follow existing folder structure
 
 ## Example: Implementing a new feature component
 
@@ -47,7 +26,7 @@ Context:
 
 - Project: ReactLab
 - Reference files: [PROJECT_CONTEXT.md](./.ai/PROJECT_CONTEXT.md), [COMMIT_RULES.md](./.ai/COMMIT_RULES.md), [CODING_RULES.md](./.ai/CODING_RULES.md)
-- Tech stack: React + Tailwind
+- Tech stack: React + SCSS
 - Target feature folder: /features/useState/pages/
 
 Task:
@@ -58,5 +37,5 @@ Rules:
 - Use shared Button component for UI
 - Use useState for counter logic
 - Follow folder structure and import rules
-- All styling should be in an accompanying `.css` file using CSS variables.
+- All styling should be in an accompanying `.scss` file using SCSS variables.
 - Page should export via index.js
