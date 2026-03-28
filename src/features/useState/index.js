@@ -1,5 +1,5 @@
-import UseStatePage from '@/features/useState/pages/UseStatePage'
-import { useStateExamples } from './examples'
+import UseStatePage from '@/features/useState/pages/UseStatePage.jsx'
+import { useStateExamples } from './examples/index.js'
 
 export const useStateFeature = {
   id: 'use-state',

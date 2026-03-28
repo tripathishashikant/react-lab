@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Button from '@/shared/components/button/Button';
+import Button from '@/shared/components/button/Button.jsx';
 
 export default function ToggleVisibility() {
   const [isVisible, setIsVisible] = useState(true);

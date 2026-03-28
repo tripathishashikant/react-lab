@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Button from '@/shared/components/button/Button';
+import Button from '@/shared/components/button/Button.jsx';
 
 import '@/features/useState/examples/counter/counter.scss'
 
