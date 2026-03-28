@@ -1,4 +1,4 @@
-import NotFoundPage from '@/features/notFound/pages/NotFoundPage'
+import NotFoundPage from '@/features/notFound/pages/NotFoundPage.jsx'
 
 export const notFoundFeature = {
   id: 'not-found',

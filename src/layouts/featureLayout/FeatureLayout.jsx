@@ -1,7 +1,7 @@
 import { Outlet, useMatches, useNavigate } from 'react-router-dom';
 import { FiChevronLeft } from 'react-icons/fi';
 
-import Button from '@/shared/components/button/Button';
+import Button from '@/shared/components/button/Button.jsx';
 
 import '@/layouts/featureLayout/featureLayout.scss';
 

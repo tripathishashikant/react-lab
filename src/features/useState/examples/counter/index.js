@@ -1,4 +1,4 @@
-import Counter from '@/features/useState/examples/counter/Counter'
+import Counter from '@/features/useState/examples/counter/Counter.jsx'
 import code from '@/features/useState/examples/counter/counter.jsx?raw'
 
 export default {

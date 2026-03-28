@@ -1,4 +1,4 @@
-import ToggleVisibility from '@/features/useState/examples/toggle-visibility/ToggleVisibility'
+import ToggleVisibility from '@/features/useState/examples/toggle-visibility/ToggleVisibility.jsx'
 import code from '@/features/useState/examples/toggle-visibility/ToggleVisibility.jsx?raw'
 
 export default {
