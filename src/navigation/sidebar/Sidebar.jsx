@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 import '@/navigation/sidebar/sidebar.scss'
 
 import { features } from "@/features"
-import Logo from "@/shared/components/Logo/Logo";
+import Logo from "@/shared/components/logo/Logo";
 
 function Sidebar() {
   return (
@@ -12,15 +12,17 @@ function Sidebar() {
       </div>
       <div className="l-sidebar__divider"></div>
       <nav className="l-sidebar__nav">
-        {features.map((feature) => (
-          <NavLink
-            key={feature.id}
-            to={feature.path}
-            className="l-sidebar__link"
-          >
-            {feature.title}
-          </NavLink>
-        ))}
+        {features
+          .filter(feature => feature.id !== 'not-found')
+          .map((feature) => (
+            <NavLink
+              key={feature.id}
+              to={feature.path}
+              className="l-sidebar__link"
+            >
+              {feature.title}
+            </NavLink>
+          ))}
       </nav>
       <div className="l-sidebar__divider"></div>
       <footer className="l-sidebar__footer">
