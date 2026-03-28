@@ -1,5 +1,5 @@
 import UseStatePage from '@/features/useState/pages/UseStatePage.jsx'
-import { useStateExamples } from './examples/index.js'
+import { useStateExamples } from '@/features/useState/examples/index.js'
 
 export const useStateFeature = {
   id: 'use-state',
@@ -11,4 +11,3 @@ export const useStateFeature = {
   category: 'hook',
   examples: useStateExamples,
 }
-
