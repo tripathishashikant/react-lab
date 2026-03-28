@@ -24,6 +24,12 @@ ReactLab is a structured learning environment for mastering React concepts in a 
 
 3. **Open your browser** to `http://localhost:5173` (or the address shown in your terminal).
 
+## Deployment
+
+The site is deployed on Vercel and can be accessed at the following URL:
+
+[https://react-lab-zeta.vercel.app/](https://react-lab-zeta.vercel.app/)
+
 ## Project Structure
 
 The project follows a strict, feature-based architecture. For a detailed explanation of the folder structure, import rules, and coding standards, please refer to the [PROJECT_CONTEXT.md](.ai/PROJECT_CONTEXT.md) file.
