@@ -1,5 +1,5 @@
 import Counter from '@/features/useState/examples/counter/Counter.jsx'
-import code from '@/features/useState/examples/counter/counter.jsx?raw'
+import code from '@/features/useState/examples/counter/Counter.jsx?raw'
 
 export default {
   id: 'counter',
