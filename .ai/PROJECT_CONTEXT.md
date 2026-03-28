@@ -19,7 +19,7 @@ AI tools and developers must follow this strictly.
 
 ### `src/` (root)
 
-Everything lives here.
+Everything lives here. `main.jsx` is the entry point.
 
 Rule:
 
@@ -36,17 +36,7 @@ Controls **startup**, **routing**, and **global providers**.
 
 #### Files
 
-- `main.jsx`
-  - Entry point
-  - Mounts React to DOM
-  - Should never change often
-
-- `App.jsx`
-  - High-level app wrapper
-  - No UI
-  - No feature logic
-
-- `routes.jsx`
+- `router.jsx`
   - Central routing table
   - Connects layouts with features
 
@@ -71,7 +61,7 @@ Think:
 - Sidebar
 - Content area
 
-#### `MainLayout/`
+#### `mainLayout/`
 
 Used for most screens.
 
@@ -84,13 +74,14 @@ Contains:
 No state.
 No business logic.
 
-#### `EmptyLayout/`
+#### `featureLayout/`
 
-Used for:
+Used for feature pages.
 
-- Isolated demos
-- Error pages
-- Full-screen experiments
+#### `exampleLayout/`
+
+Used for isolated examples.
+
 
 Layouts decide **where** things go, never **what** they do.
 
@@ -113,8 +104,7 @@ Nothing crosses feature boundaries.
 ```
 useState/
 ├── pages/
-├── components/
-├── hooks/
+├── examples/
 └── index.js
 ```
 
@@ -128,42 +118,13 @@ Example:
 
 - `UseStatePage.jsx`
 
-##### `components/`
+##### `examples/`
 
-- Feature-specific UI
-- Not reusable outside this feature
-
-If another feature needs it, move it to `shared/`.
-
-##### `hooks/`
-
-- Custom hooks
-- Feature-scoped logic
-
-This is where real learning happens.
-
-##### `config.js`
+- Contains examples for the feature. Each example is a component.
 
 ##### `index.js`
 
-Metadata for the feature (previously `config.js`).
-
-Contains:
-
-- route path
-- title
-- difficulty
-- status
-
-Used by:
-
-- router
-- sidebar
-- feature list
-
-##### `index.js`
-
-Public API of the feature (and holds metadata).
+Public API of the feature.
 
 Exports:
 
@@ -171,7 +132,7 @@ Exports:
 - route config
 - metadata
 
-Other parts of the app see features only through this file. Feature metadata is now held here.
+Other parts of the app see features only through this file.
 
 ---
 
@@ -190,7 +151,7 @@ Examples:
 - Button
 - Card
 - Tabs
-- CodeBlock
+- Code
 
 Rules:
 
@@ -204,32 +165,10 @@ Cross-feature hooks.
 
 Examples:
 
-- `useTheme`
-- `useLocalStorage`
+- `useShuffledArray`
 
 If it depends on feature data, it doesn’t belong here.
 
-#### `ui/`
-
-Very small primitives.
-
-Examples:
-
-- Badge
-- Loader
-
-Think atoms, not molecules.
-
-#### `utils/`
-
-Pure functions.
-
-Examples:
-
-- className helpers
-- formatters
-
-No React here.
 
 ---
 
@@ -252,20 +191,32 @@ Navigation is data-driven. Not hardcoded.
 
 ### `styles/` – Global styling rules
 
-Very limited responsibility.
+This project uses **SCSS** for styling.
 
 #### Files
 
-- `globals.css`
-  - CSS reset
-  - Base styles
+- `style.scss`
+  - Main entry point for styles
 
-- `variables.css`
-  - Colors
-  - Spacing
-  - Font sizes
+- `abstract/`
+    - `_colors.scss`
+    - `_functions.scss`
+    - `_index.scss`
+    - `_mixins.scss`
+    - `_variables.scss`
 
-Components use CSS Modules or scoped styles.
+- `base/`
+    - `_globals.scss`
+    - `_index.scss`
+    - `_reset.scss`
+
+- `themes/`
+    - `_index.scss`
+    - `_light.scss`
+
+- `utilities/`
+    - `_index.scss`
+    - `_utilities.scss`
 
 ---
 
@@ -295,13 +246,10 @@ Forbidden:
 
 ---
 
-## CSS / Style Guide Rules (SMACSS + BEM)
+## CSS / Style Guide Rules (SCSS)
 
-- Use **CSS** with **SMACSS** architecture (Base, Layout, Module, State, Theme) combined with **BEM** naming conventions (`block__element--modifier`).
-- Use modern CSS features heavily: **CSS Grid** and **Flexbox** for layouts.
-- Use native CSS Variables in `styles/variables.css` for strict tokens: colors, spacing, and typography.
-- Use SMACSS prefixes: `l-` for layouts, `c-` for components/modules, `is-`/`has-` for states (e.g., `l-grid`, `c-card`, `is-active`).
-- Feature-specific styles should live inside the feature folder (e.g., `CounterPage.css`) and map to BEM blocks.
+- Use **SCSS** for styling.
+- Feature-specific styles should live inside the feature folder.
 - Global styles, Resets, and Theme variables live in `src/styles/`.
 - No inline CSS.
 
@@ -329,7 +277,7 @@ Allowed types:
 - feat → new feature
 - fix → bug fix
 - refactor → internal change
-- style → formatting/Tailwind
+- style → formatting/SCSS
 - chore → tooling/scripts
 - docs → documentation only
 - test → tests
@@ -347,7 +295,7 @@ Rules:
 ## AI / Coding rules (for Gemini or other assistants)
 
 - Read **this file** before generating code
-- Follow folder, import, and Tailwind rules strictly
+- Follow folder, import, and SCSS rules strictly
 - Ask before adding new libraries
 - Do not break GitHub workflow rules
 - Respect commit and issue rules
@@ -373,7 +321,7 @@ Ask yourself:
 
 1. Will AI know where to put this file?
 2. Will GitHub workflow track this properly?
-3. Will the BEM and SMACSS naming convention enforce structure without style bleed?
+3. Will the SCSS naming convention enforce structure without style bleed?
 4. Will commits be consistent?
 
 If yes → you have a disciplined, scalable learning project.

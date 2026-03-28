@@ -1,46 +1,85 @@
-# React + Vite
+# ReactLab
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ReactLab is a structured learning environment for mastering React concepts in a way that mimics real-world application development. It's built with Vite, React, and SCSS, and it enforces a strict, feature-based architecture to promote disciplined coding practices.
 
-Currently, two official plugins are available:
+## Core Philosophy
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Learn by Doing:** Build features that correspond to core React concepts.
+- **Structure and Discipline:** The project's architecture is designed to teach separation of concerns and maintainable code.
+- **AI-Assisted Development:** The project is set up to work with AI assistants, with clear guidelines and rules to ensure generated code adheres to the project's standards.
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. **Install dependencies:**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+    ```bash
+    npm install
+    ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+2. **Start the development server:**
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{js,jsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-javascript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      // other options...
-    },
-  },
-])
+    ```bash
+    npm run dev
+    ```
+
+3. **Open your browser** to `http://localhost:5173` (or the address shown in your terminal).
+
+## Project Structure
+
+The project follows a strict, feature-based architecture. For a detailed explanation of the folder structure, import rules, and coding standards, please refer to the [PROJECT_CONTEXT.md](.ai/PROJECT_CONTEXT.md) file.
+
+## Adding a New Feature
+
+To add a new feature, you must follow the established structure:
+
+1. **Create a new feature folder** inside `src/features/`. The folder name should be in `camelCase` (e.g., `newFeature`).
+2. **Create sub-folders** `pages` and `examples` inside your new feature folder.
+    - `pages`: This will contain the main component for the feature, which will be rendered by the router.
+    - `examples`: This will hold additional, isolated examples related to the feature.
+3. **Create an `index.js` file** in the root of your new feature folder. This file is crucial as it defines the feature's metadata and exports it. The metadata includes the feature's `id`, `path`, `component`, `title`, `description`, `difficulty`, `category`, and `examples`.
+4. **Router Configuration**: The main router is located at `src/app/router.jsx`. The router automatically uses the metadata from the `index.js` file of each feature, so you don't need to manually add the route to the router file.
+
+### Example Feature Structure
+
+``` text
+src/features/newFeature/
+├── index.js         // Exports feature metadata (id, path, component, title, etc.)
+├── pages/
+│   └── NewFeaturePage.jsx // Main component for the feature
+└── examples/
+    └── Example1.jsx     // An example component
 ```
+
+## Styling and SCSS
+
+The project uses SCSS for styling, following a combination of SMACSS and BEM principles.
+
+### SCSS Architecture
+
+- **Global Styles:** Global styles, variables, mixins, and functions are located in `src/styles`. This directory is organized into `abstracts`, `base`, `themes`, and `utilities`.
+- **Component Styles:** Each component has its own `.scss` file, located in the same directory as the component file (e.g., `src/shared/components/button/Button.jsx` and `src/shared/components/button/button.scss`).
+- **SCSS Modules:** We use SCSS modules (`@use`) to import shared styles and prevent naming conflicts.
+
+### Naming Conventions
+
+- **BEM:** We use the BEM (Block__Element--Modifier) naming convention for our classes.
+- **SMACSS Prefixes:** We use a `c-` prefix for components (e.g., `c-button`) and `l-` for layouts to quickly identify the role of a class.
+
+### Adding New Styles
+
+When adding new styles for a component:
+
+1. **Create a new `.scss` file** in the same directory as your component.
+2. **Use BEM and SMACSS naming conventions** for your classes.
+3. **Import global styles** using `@use '@/styles/abstract';` to access shared variables and mixins.
+4. **Import the `.scss` file** into your component file (e.g., `import '@/styles/.../button.scss';`).
 
 ## AI Usage
 
-AI tools must follow:
+AI tools are encouraged for this project, but they **must** follow the rules and guidelines outlined in the following documents:
 
-- /.ai/PROJECT_CONTEXT.md
-- /.ai/CODING_RULES.md
+- [**.ai/PROJECT_CONTEXT.md**](.ai/PROJECT_CONTEXT.md): The master guide to the project's architecture, rules, and standards.
+- [**.ai/CODING_RULES.md**](.ai/CODING_RULES.md): Specific rules for generating code.
+- [**.ai/PROMPT_GUIDE.md**](.ai/PROMPT_GUIDE.md): A guide to writing effective prompts for AI assistants.
 
-Any deviation is a bug.
+**Any deviation from these rules is considered a bug.**
