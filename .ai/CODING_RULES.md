@@ -7,7 +7,7 @@ When generating code:
 - Do not invent patterns
 - Ask before adding libraries
 - Prefer readability over cleverness
-- Match existing Tailwind usage
+- Match existing SCSS usage
 - No unused code
 
 If unsure, ask.
