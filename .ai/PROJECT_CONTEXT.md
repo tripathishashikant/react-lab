@@ -82,7 +82,6 @@ Used for feature pages.
 
 Used for isolated examples.
 
-
 Layouts decide **where** things go, never **what** they do.
 
 ---
@@ -101,7 +100,7 @@ Nothing crosses feature boundaries.
 
 #### Inside a feature
 
-```
+``` text
 useState/
 ├── pages/
 ├── examples/
@@ -159,24 +158,13 @@ Rules:
 - JSX out
 - No side effects
 
-#### `hooks/`
-
-Cross-feature hooks.
-
-Examples:
-
-- `useShuffledArray`
-
-If it depends on feature data, it doesn’t belong here.
-
-
 ---
 
 ### `navigation/` – Sidebar system
 
 Controls app navigation.
 
-#### Files
+#### Navigation Files
 
 - `menu.js`
   - Builds menu from feature metadata
@@ -193,30 +181,30 @@ Navigation is data-driven. Not hardcoded.
 
 This project uses **SCSS** for styling.
 
-#### Files
+#### Styles Files
 
 - `style.scss`
   - Main entry point for styles
 
 - `abstract/`
-    - `_colors.scss`
-    - `_functions.scss`
-    - `_index.scss`
-    - `_mixins.scss`
-    - `_variables.scss`
+  - `_colors.scss`
+  - `_functions.scss`
+  - `_index.scss`
+  - `_mixins.scss`
+  - `_variables.scss`
 
 - `base/`
-    - `_globals.scss`
-    - `_index.scss`
-    - `_reset.scss`
+  - `_globals.scss`
+  - `_index.scss`
+  - `_reset.scss`
 
 - `themes/`
-    - `_index.scss`
-    - `_light.scss`
+  - `_index.scss`
+  - `_light.scss`
 
 - `utilities/`
-    - `_index.scss`
-    - `_utilities.scss`
+  - `_index.scss`
+  - `_utilities.scss`
 
 ---
 
@@ -270,7 +258,7 @@ Forbidden:
 ## Commit rules
 
 Format:
-<type>(#issue): short description
+`<type>`(#issue): short description
 
 Allowed types:
 

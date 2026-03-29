@@ -1,10 +1,10 @@
-name: CI (Build Check)
+name: CI (Build and Linting Check)
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, develop]
   push:
-    branches: [main]
+    branches: [main, develop]
 
 # Yeh environment variable warning ko khatam kar dega aur Node 24 use karega
 env:
@@ -21,11 +21,14 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '24' # Yahan 20 ki jagah 24 kar dijiye
+          node-version: '24'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm install
+
+      - name: Lint code
+        run: npm run lint
 
       - name: Build project
         run: npm run build

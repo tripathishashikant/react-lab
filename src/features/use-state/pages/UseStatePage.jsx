@@ -1,7 +1,6 @@
 import { Link, useMatches } from 'react-router-dom';
 
 import Card from '@/shared/components/card/Card';
-import { useShuffledArray } from '@/shared/hooks/useShuffledArray';
 
 function UseStatePage() {
   const matches = useMatches();
@@ -9,12 +8,10 @@ function UseStatePage() {
   const { feature } = handle || {};
   const examples = feature?.examples || [];
 
-  const shuffledExamples = useShuffledArray(examples);
-
   return (
     <div className="p-use-state">
       <div className="p-use-state__list u-masonry-container">
-        {shuffledExamples.map((example) => (
+        {examples.map((example) => (
           <Card
             className="u-masonry-item"
             key={example.id}
