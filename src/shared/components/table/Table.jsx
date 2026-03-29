@@ -1,6 +1,6 @@
 import '@/shared/components/table/table.scss'
 
-export default function Table({ columns = [], data = [] }) {
+export default function Table({ columns = [], data = [], onRowClick }) {
   return (
     <div className="c-table">
       <table className="c-table__element">
