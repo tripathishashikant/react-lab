@@ -30,6 +30,16 @@ The site is deployed on Vercel and can be accessed at the following URL:
 
 [https://react-lab-zeta.vercel.app/](https://react-lab-zeta.vercel.app/)
 
+## Continuous Integration
+
+This project uses a Continuous Integration (CI) pipeline with GitHub Actions to ensure code quality and stability. The CI pipeline is automatically triggered on every push and pull request to the `main` branch.
+
+The pipeline performs the following steps:
+
+1.  **Build Check:** It runs the `npm run build` command to verify that the project builds successfully without any errors.
+
+This helps catch integration issues early and ensures that the `main` branch is always in a deployable state.
+
 ## Project Structure
 
 The project follows a strict, feature-based architecture. For a detailed explanation of the folder structure, import rules, and coding standards, please refer to the [PROJECT_CONTEXT.md](.ai/PROJECT_CONTEXT.md) file.
