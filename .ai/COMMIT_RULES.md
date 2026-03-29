@@ -4,7 +4,7 @@ Commits must be readable without opening the code.
 
 ## Format (mandatory)
 
-<type>(#issue): short description
+`<type>`(#issue): short description
 
 Example:
 
