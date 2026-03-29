@@ -255,6 +255,14 @@ Forbidden:
 
 ---
 
+## Branching Strategy
+
+- **`develop` Branch:** Main development branch. All milestone branches are created from `develop`.
+- **Milestone Branches:** Created from `develop` for each milestone (e.g., `m1`, `m2`).
+- **Feature Branches:** Created from the relevant milestone branch.
+
+---
+
 ## Commit rules
 
 Format:
