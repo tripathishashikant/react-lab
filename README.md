@@ -40,6 +40,18 @@ The pipeline performs the following steps:
 
 This helps catch integration issues early and ensures that the `main` branch is always in a deployable state.
 
+## Branching Strategy
+
+This project follows a structured branching model to keep the development process organized and predictable.
+
+-   **`develop` Branch:** This is the main development branch where all completed features and milestones are merged. It represents the most up-to-date version of the project under development.
+
+-   **Milestone Branches:** For each major version or milestone (e.g., `m1`, `m2`), a milestone branch is created from the `develop` branch. These branches are used to group related features for a specific release.
+
+-   **Feature Branches:** All new features are developed in their own branches. Feature branches are created from the corresponding milestone branch.
+
+This structure ensures that the `develop` branch remains stable while new features are being developed in isolation.
+
 ## Project Structure
 
 The project follows a strict, feature-based architecture. For a detailed explanation of the folder structure, import rules, and coding standards, please refer to the [PROJECT_CONTEXT.md](.ai/PROJECT_CONTEXT.md) file.
