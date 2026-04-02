@@ -1,9 +1,7 @@
-import { features, topicsFeature } from '@/features'
+import { docsPages, learningFeatures } from '@/features'
 
-// This function generates the menu structure for the sidebar.
-// It uses the 'features' array as the single source of truth.
-export const generateMenu = () => {
-  const menuItems = [{ ...topicsFeature, type: 'link' }, ...features.map((feature) => ({ ...feature, type: 'link' }))]
-
-  return menuItems
-}
+// Sidebar should only include user-facing learning and docs surfaces.
+export const sidebarMenu = [...learningFeatures, ...docsPages].map((item) => ({
+  ...item,
+  type: 'link',
+}))

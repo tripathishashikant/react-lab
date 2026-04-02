@@ -3,11 +3,10 @@ import { createBrowserRouter, redirect } from 'react-router-dom'
 import MainLayout from '@/layouts/mainLayout/MainLayout'
 import FeatureLayout from '@/layouts/featureLayout/FeatureLayout'
 import ExampleLayout from '@/layouts/exampleLayout/ExampleLayout'
-import NotFoundPage from '@/features/notFound/pages/NotFoundPage'
 
-import { features } from '@/features'
+import { docsPages, learningFeatures, utilityRoutes } from '@/features'
 
-const featureRoutes = features.map(f => {
+const learningFeatureRoutes = learningFeatures.map(f => {
   const route = {
     id: f.id,
     path: f.path,
@@ -45,6 +44,22 @@ const featureRoutes = features.map(f => {
   return route
 })
 
+const docsRoutes = docsPages.map((page) => ({
+  id: page.id,
+  path: page.path,
+  children: [
+    {
+      index: true,
+      Component: page.component,
+      handle: {
+        docPage: page,
+      },
+    },
+  ],
+}))
+
+const fallbackRoute = utilityRoutes.find((route) => route.id === 'not-found')
+
 export const routes = [
   {
     path: '/',
@@ -57,11 +72,11 @@ export const routes = [
       {
         path: '',
         Component: FeatureLayout,
-        children: featureRoutes,
+        children: [...learningFeatureRoutes, ...docsRoutes],
       },
       {
         path: '*',
-        Component: NotFoundPage,
+        Component: fallbackRoute.component,
       },
     ],
   },
