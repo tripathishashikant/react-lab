@@ -11,8 +11,8 @@ const FeatureLayout = () => {
   const navigate = useNavigate();
 
   const { handle } = matches[matches.length - 1] || {};
-  const { feature, example } = handle || {};
-  const { title, description } = example || feature || {};
+  const { feature, docPage, example } = handle || {};
+  const { title, description } = example || feature || docPage || {};
 
   const handleGoBack = () => {
     navigate(-1)
