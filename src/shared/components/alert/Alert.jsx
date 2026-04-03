@@ -1,13 +1,13 @@
 import '@/shared/components/alert/alert.scss'
 
 export default function Alert({
-  type = "info",
+  variant = "info",
   children,
   onClose,
   className = "",
 }) {
   return (
-    <div className={`c-alert c-alert--${type} ${className}`}>
+    <div className={`c-alert c-alert--${variant} ${className}`}>
       <div className="c-alert__content">{children}</div>
 
       {onClose && (
