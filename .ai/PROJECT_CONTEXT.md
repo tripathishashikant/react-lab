@@ -1,6 +1,6 @@
-# ReactLab – Project Context & AI Guide
+# ReactLab - Project Context & AI Guide
 
-This document explains **project architecture, AI rules, GitHub workflow, commit rules, and coding standards**.  
+This document explains project architecture, AI rules, GitHub workflow, commit rules, and coding standards.
 AI tools and developers must follow this strictly.
 
 ---
@@ -10,7 +10,7 @@ AI tools and developers must follow this strictly.
 - Learn React like building a real product
 - Separate concerns early
 - Let structure teach discipline
-- AI-generated code must **never break structure**
+- AI-generated code must never break structure
 - Every commit, issue, and feature must be tracked
 
 ---
@@ -21,45 +21,38 @@ AI tools and developers must follow this strictly.
 
 Everything lives here. `main.jsx` is the entry point.
 
-Rule:
+Rules:
 
 - No logic outside `src`
 - No random files
-
-If it doesn’t belong somewhere specific, it doesn’t belong at all.
-
----
-
-### `app/` – Application brain
-
-Controls **startup**, **routing**, and **global providers**.
-
-#### Files
-
-- `router.jsx`
-  - Central routing table
-  - Connects layouts with features
-
-- `providers.jsx`
-  - Theme
-  - Context providers
-  - Global wrappers
-
-Rule:
-
-- If you import a feature here, you’re doing it wrong
+- If it does not belong somewhere specific, it does not belong at all
 
 ---
 
-### `layouts/` – Page skeletons
+### `app/` - Application composition
 
-Layouts define **structure**, not content.
+Controls app-level composition and router setup.
 
-Think:
+#### Inside `app/`
 
-- Header
-- Sidebar
-- Content area
+- `router/`
+  - `index.jsx`
+    - Central router composition
+    - Connects layouts with route groups
+  - `routeRegistry.jsx`
+    - Registers learning features, docs pages, and system routes
+    - Builds route objects from metadata
+
+Rules:
+
+- Keep route composition here
+- Do not place learning feature implementation inside `app/`
+
+---
+
+### `layouts/` - Page skeletons
+
+Layouts define structure, not content.
 
 #### `mainLayout/`
 
@@ -67,44 +60,46 @@ Used for most screens.
 
 Contains:
 
-- Top header
-- Left sidebar
-- Scrollable content area
+- Sidebar
+- Main content area
 
 No state.
 No business logic.
 
 #### `featureLayout/`
 
-Used for feature pages.
+Used for learning feature pages.
+
+#### `docsLayout/`
+
+Used for docs pages.
 
 #### `exampleLayout/`
 
-Used for isolated examples.
+Used for isolated feature examples.
 
-Layouts decide **where** things go, never **what** they do.
+Layouts decide where things go, never what they do.
 
 ---
 
-### `features/` – Learning modules (most important)
+### `features/` - Learning modules
 
-Each folder = **one React concept**.
+Each folder is one React concept.
 
 Examples:
 
-- `useState`
-- `useEffect`
-- `forms`
+- `use-state`
+- future hooks or React API topics
 
 Nothing crosses feature boundaries.
 
 #### Inside a feature
 
-``` text
-useState/
-├── pages/
-├── examples/
-└── index.js
+```text
+use-state/
+  pages/
+  examples/
+  index.js
 ```
 
 ##### `pages/`
@@ -113,13 +108,10 @@ useState/
 - Connected to layouts
 - One page per feature
 
-Example:
-
-- `UseStatePage.jsx`
-
 ##### `examples/`
 
-- Contains examples for the feature. Each example is a component.
+- Contains examples for the feature
+- Each example is a component with metadata such as difficulty, code, and notes
 
 ##### `index.js`
 
@@ -127,17 +119,50 @@ Public API of the feature.
 
 Exports:
 
-- page
-- route config
-- metadata
+- page component
+- route metadata
+- examples metadata
 
-Other parts of the app see features only through this file.
+Other parts of the app should see features only through this file.
 
 ---
 
-### `shared/` – Reusable building blocks
+### `docs/` - Documentation surfaces
 
-Used across **multiple features**.
+Holds documentation pages that are not learning features.
+
+Current example:
+
+- `styleguide/`
+
+Use this area for:
+
+- docs overview pages
+- future per-component docs pages
+- examples and variants for shared components
+
+---
+
+### `system/` - App-level fallback pages
+
+Holds application-level pages that are not learning features and not docs.
+
+Current example:
+
+- `notFound/`
+
+Use this area for pages like:
+
+- not found
+- maintenance
+- unauthorized
+- other app/system states
+
+---
+
+### `shared/` - Reusable building blocks
+
+Used across multiple features.
 
 No feature knowledge allowed.
 
@@ -151,115 +176,111 @@ Examples:
 - Card
 - Tabs
 - Code
+- Alert
+- Loader
 
 Rules:
 
 - Props in
 - JSX out
-- No side effects
+- No feature-specific behavior
 
 ---
 
-### `navigation/` – Sidebar system
+### `navigation/` - Sidebar system
 
 Controls app navigation.
 
-#### Navigation Files
+#### Navigation files
 
 - `menu.js`
-  - Builds menu from feature metadata
+  - Builds menu from router registry metadata
   - No JSX
 
 - `Sidebar.jsx`
   - Renders navigation UI
 
-Navigation is data-driven. Not hardcoded.
+Navigation is data-driven, not hardcoded.
 
 ---
 
-### `styles/` – Global styling rules
+### `styles/` - Global styling rules
 
-This project uses **SCSS** for styling.
+This project uses SCSS for styling.
 
-#### Styles Files
+#### Style areas
 
 - `style.scss`
   - Main entry point for styles
-
 - `abstract/`
-  - `_colors.scss`
-  - `_functions.scss`
-  - `_index.scss`
-  - `_mixins.scss`
-  - `_variables.scss`
-
+  - tokens, functions, mixins, variables
 - `base/`
-  - `_globals.scss`
-  - `_index.scss`
-  - `_reset.scss`
-
+  - globals and reset
 - `themes/`
-  - `_index.scss`
-  - `_light.scss`
-
+  - theme variables
 - `utilities/`
-  - `_index.scss`
-  - `_utilities.scss`
+  - utility classes
 
 ---
 
-### `assets/` – Static files
+### `assets/` - Static files
 
-Contains:
+Contains static assets such as the logo.
 
-- SVG logo
-- Icons
-
-No images inside components directly.
+No large feature logic belongs here.
 
 ---
 
-## Import rules (important)
+## Import rules
 
 Allowed:
 
-- feature → shared
-- app → layouts
+- feature -> shared
+- feature -> its own local files
+- docs -> shared
+- system -> shared
+- app/router -> layouts
+- navigation -> app/router metadata
 
 Forbidden:
 
-- feature → feature
-- shared → feature
-- layout → feature logic
+- feature -> feature
+- shared -> feature
+- feature -> docs
+- feature -> system
+- layout -> feature logic
 
 ---
 
-## CSS / Style Guide Rules (SCSS)
+## CSS / Style rules (SCSS)
 
-- Use **SCSS** for styling.
+- Use SCSS for styling.
 - Feature-specific styles should live inside the feature folder.
-- Global styles, Resets, and Theme variables live in `src/styles/`.
-- No inline CSS.
+- Docs-specific styles should live inside the docs folder.
+- Global styles, resets, and theme variables live in `src/styles/`.
+- No inline CSS unless there is a strong reason.
+- Use `c-` classes for shared components.
+- Use shared mixins for reusable visual patterns.
+- Use `u-button-like` for router links that should look like buttons instead of applying `c-button` directly to links.
 
 ---
 
-## GitHub Workflow rules
+## GitHub workflow rules
 
 - Every task = GitHub issue
-- Issue must have **priority** label: `p0` (critical), `p1` (high), `p2` (low)
+- Issue must have priority label: `p0`, `p1`, or `p2`
 - Only one `p0` at a time
 - Issues must belong to a milestone
 - Use GitHub Projects for tracking:
-  - Columns: Backlog → Ready → In Progress → Review → Done
-  - Use filters/views for priority focus
+  - Backlog -> Ready -> In Progress -> Review -> Done
 
 ---
 
-## Branching Strategy
+## Branching strategy
 
-- **`develop` Branch:** Main development branch. All milestone branches are created from `develop`.
-- **Milestone Branches:** Created from `develop` for each milestone (e.g., `m1`, `m2`).
-- **Feature Branches:** Created from the relevant milestone branch.
+- `develop` is the main development branch
+- Milestone branches are created from `develop`
+- Feature branches are created from the relevant milestone branch
 
 ---
 
@@ -270,44 +291,47 @@ Format:
 
 Allowed types:
 
-- feat → new feature
-- fix → bug fix
-- refactor → internal change
-- style → formatting/SCSS
-- chore → tooling/scripts
-- docs → documentation only
-- test → tests
+- feat
+- fix
+- refactor
+- style
+- chore
+- docs
+- test
 
 Rules:
 
-- Reference **issue number**
-- Lowercase, present tense, ≤72 chars
+- Reference the issue number
+- Lowercase, present tense, <=72 chars
 - One logical change per commit
-- Squash merge only, title must follow rules
+- Squash merge only
 - Breaking changes prefixed with `BREAKING:`
 
 ---
 
-## AI / Coding rules (for Gemini or other assistants)
+## AI / Coding rules
 
-- Read **this file** before generating code
+- Read this file before generating code
 - Follow folder, import, and SCSS rules strictly
 - Ask before adding new libraries
 - Do not break GitHub workflow rules
 - Respect commit and issue rules
 - One responsibility per file/component
 - Code must be readable, maintainable, and scalable
-- Never generate code outside `features/`, `shared/`, `layouts/`, or `app/`
+- Put routing logic in `app/router/`
+- Put docs pages in `docs/`
+- Put app fallback pages in `system/`
+- Never place docs or system pages inside `features/`
 
 ---
 
 ## Learning and discipline
 
 - Think before coding
-- Close one issue at a time (`p0`)
+- Close one issue at a time
 - No shortcuts in folder structure
 - All code must pass linting rules
-- AI output = junior dev; you review every line
+- AI output is draft quality; review every line
 
 ---
 
@@ -320,4 +344,4 @@ Ask yourself:
 3. Will the SCSS naming convention enforce structure without style bleed?
 4. Will commits be consistent?
 
-If yes → you have a disciplined, scalable learning project.
+If yes, the project structure is still disciplined and scalable.

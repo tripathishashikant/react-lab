@@ -1,4 +1,4 @@
-import NotFoundPage from '@/features/notFound/pages/NotFoundPage'
+import NotFoundPage from '@/system/notFound/pages/NotFoundPage'
 
 export const notFoundRoute = {
   id: 'not-found',
