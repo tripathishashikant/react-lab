@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import '@/navigation/sidebar/sidebar.scss'
 
 import { sidebarMenu } from "@/navigation/menu"
@@ -8,7 +8,9 @@ function Sidebar() {
   return (
     <aside className="l-sidebar">
       <div className="l-sidebar__logo">
-        <Logo />
+        <Link to="/" className="l-sidebar__logo-link" aria-label="Go to homepage">
+          <Logo />
+        </Link>
       </div>
       <div className="l-sidebar__divider"></div>
       <nav className="l-sidebar__nav">

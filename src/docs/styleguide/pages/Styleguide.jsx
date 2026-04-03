@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import '@/features/styleguide/pages/styleguide.scss';
+import '@/docs/styleguide/pages/styleguide.scss';
 
-import StyleguideSection from '@/features/styleguide/components/StyleguideSection';
-import { getStyleguideSections } from '@/features/styleguide/config/sections';
+import StyleguideSection from '@/docs/styleguide/components/StyleguideSection';
+import { getStyleguideSections } from '@/docs/styleguide/config/sections';
 
 export default function StyleguidePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
