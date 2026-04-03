@@ -48,8 +48,8 @@ export function getStyleguideSections({ isModalOpen, setIsModalOpen }) {
       renderDemo: () => (
         <>
           <Alert>Info message</Alert>
-          <Alert type="success">Success message</Alert>
-          <Alert type="error">Error message</Alert>
+          <Alert variant="success">Success message</Alert>
+          <Alert variant="error">Error message</Alert>
         </>
       ),
     },
