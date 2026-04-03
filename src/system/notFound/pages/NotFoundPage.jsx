@@ -3,7 +3,7 @@ import { FaRegSadCry } from 'react-icons/fa'
 
 import Button from '@/shared/components/button/Button'
 
-import '@/features/notFound/pages/notFoundPage.scss'
+import '@/system/notFound/pages/notFoundPage.scss'
 
 function NotFoundPage() {
   return (
@@ -19,4 +19,3 @@ function NotFoundPage() {
 }
 
 export default NotFoundPage
-

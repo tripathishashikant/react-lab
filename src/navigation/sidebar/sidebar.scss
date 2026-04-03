@@ -19,6 +19,10 @@
     justify-content: center;
   }
 
+  &__logo-link {
+    display: inline-flex;
+  }
+
   &__nav {
     @include abstract.flex(flex-start, flex-start, column, var(--space-xs));
     flex-grow: 1;
@@ -44,4 +48,3 @@
     color: var(--color-text-muted);
   }
 }
-

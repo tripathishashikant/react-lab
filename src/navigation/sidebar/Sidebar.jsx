@@ -1,28 +1,28 @@
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 import '@/navigation/sidebar/sidebar.scss'
 
-import { features } from "@/features"
+import { sidebarMenu } from "@/navigation/menu"
 import Logo from "@/shared/components/logo/Logo";
 
 function Sidebar() {
   return (
     <aside className="l-sidebar">
       <div className="l-sidebar__logo">
-        <Logo />
+        <Link to="/" className="l-sidebar__logo-link" aria-label="Go to homepage">
+          <Logo />
+        </Link>
       </div>
       <div className="l-sidebar__divider"></div>
       <nav className="l-sidebar__nav">
-        {features
-          .filter(feature => feature.id !== 'not-found')
-          .map((feature) => (
-            <NavLink
-              key={feature.id}
-              to={feature.path}
-              className="l-sidebar__link"
-            >
-              {feature.title}
-            </NavLink>
-          ))}
+        {sidebarMenu.map((feature) => (
+          <NavLink
+            key={feature.id}
+            to={feature.path}
+            className="l-sidebar__link"
+          >
+            {feature.title}
+          </NavLink>
+        ))}
       </nav>
       <div className="l-sidebar__divider"></div>
       <footer className="l-sidebar__footer">

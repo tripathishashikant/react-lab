@@ -15,7 +15,7 @@ export default function Card({
       {(title || action) && (
         <header className="c-card__header">
           {title && <h3 className="c-card__title">{title}</h3>}
-          {difficulty && <Badge level={difficulty} />}
+          {difficulty && <Badge difficulty={difficulty} />}
         </header>
       )}
 

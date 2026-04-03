@@ -1,3 +1,5 @@
+@use '@/styles/abstract';
+
 /* TEXT */
 .u-text-center { text-align: center; }
 
@@ -44,4 +46,34 @@
   width: 100%;
   margin-bottom: 1.5rem;
   break-inside: avoid;
+}
+
+/* BUTTON-LIKE LINK */
+.u-button-like {
+  @include abstract.button-like-base;
+  text-decoration: none;
+
+  &--primary {
+    @include abstract.button-like-variant(primary);
+  }
+
+  &--secondary {
+    @include abstract.button-like-variant(secondary);
+  }
+
+  &--ghost {
+    @include abstract.button-like-variant(ghost);
+  }
+
+  &--sm {
+    @include abstract.button-like-size(sm);
+  }
+
+  &--md {
+    @include abstract.button-like-size(md);
+  }
+
+  &--lg {
+    @include abstract.button-like-size(lg);
+  }
 }
