@@ -7,10 +7,13 @@ The SOP workflow is a strictly enforced 8-phase development cycle. Every feature
 - **Action**: Read `PROJECT_CONTEXT.md`, `CODING_RULES.md`, and any related documentation.
 - **Output**: A clear plan and technical strategy summary.
 
-## Phase 2: Issue Alignment
-- **Goal**: Ensure the task is tracked and defined.
-- **Action**: Check for an existing GitHub issue using `gh issue list`. If none exists, create one with clear acceptance criteria.
-- **Output**: A GitHub issue number (e.g., #123) and confirmed requirements.
+## Phase 2: Issue & Milestone Alignment
+- **Goal**: Ensure the task is tracked, labeled, and assigned to a milestone.
+- **Action**: 
+    1. Check for an existing GitHub issue using `gh issue list`. 
+    2. Create/Found an issue with a priority label (`p0`-`p2`) and assign it to the active **Milestone**.
+    3. Ensure a **Milestone Branch** (e.g., `milestone/X-name`) exists; create it from `develop` if it's the first task of that milestone.
+- **Output**: A GitHub issue number and a confirmed target Milestone branch.
 
 ## Phase 3: Codebase Exploration
 - **Goal**: Validate assumptions and identify existing patterns.
@@ -40,6 +43,8 @@ The SOP workflow is a strictly enforced 8-phase development cycle. Every feature
 ## Phase 8: Pull Request & Verification
 - **Goal**: Finalize, document, and update the "Source of Truth".
 - **Action**: 
-    1. Open a PR (or prepare for one) and check off acceptance criteria in the GitHub issue.
-    2. **Activate `context-updater`**: Automatically update `.ai/PROJECT_CONTEXT.md` and `.ai/CODING_RULES.md` to reflect the changes.
-- **Output**: A completed task, verified and reflected in the project documentation.
+    1. **Targeted PR**: Open a PR from the feature branch **into the Milestone branch** (not `develop`).
+    2. **Milestone Completion**: Once all issues in a milestone are Done, open a PR from the Milestone branch into `develop`.
+    3. **Release**: Open a PR from `develop` into `main` for release, create a git tag, and release.
+    4. **Activate `context-updater`**: Automatically update documentation.
+- **Output**: A completed task, verified and merged into the Milestone track.
