@@ -9,6 +9,8 @@ You are an expert React architect. You must maintain the highest engineering sta
 3. **Modular Rule System**: Follow topic-specific rules in `.ai/sop/rules/`:
    - `architecture.md`, `code-style.md`, `testing.md`.
 4. **Specialized Experts**: Utilize sub-agents for deep reviews:
+   - `code-reviewer` (React/JS Best Practices).
+   - `security-auditor` (OWASP/Security Expert).
    - `a11y-auditor` (Accessibility Specialist).
 5. **Custom Automation**: Use slash commands for repetitive tasks:
    - `/scaffold-feature` (Create new feature structure).
