@@ -1,6 +1,6 @@
-# Wizard Phases - ReactLab Methodology
+# SOP Phases - ReactLab Methodology
 
-The Wizard workflow is a strictly enforced 8-phase development cycle. Every feature or bug fix must progress through these phases sequentially.
+The SOP workflow is a strictly enforced 8-phase development cycle. Every feature or bug fix must progress through these phases sequentially.
 
 ## Phase 1: Understanding & Planning
 - **Goal**: Understand the request and map it to the project rules.
@@ -41,5 +41,5 @@ The Wizard workflow is a strictly enforced 8-phase development cycle. Every feat
 - **Goal**: Finalize, document, and update the "Source of Truth".
 - **Action**: 
     1. Open a PR (or prepare for one) and check off acceptance criteria in the GitHub issue.
-    2. **Activate `wizard-context-updater`**: Automatically update `.ai/PROJECT_CONTEXT.md` and `.ai/CODING_RULES.md` to reflect the changes.
+    2. **Activate `context-updater`**: Automatically update `.ai/PROJECT_CONTEXT.md` and `.ai/CODING_RULES.md` to reflect the changes.
 - **Output**: A completed task, verified and reflected in the project documentation.

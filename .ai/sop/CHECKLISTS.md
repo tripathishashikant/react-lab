@@ -1,4 +1,4 @@
-# Wizard Checklists - ReactLab
+# SOP Checklists - ReactLab
 
 Use these checklists at the end of each phase to verify completion.
 
@@ -41,5 +41,5 @@ Use these checklists at the end of each phase to verify completion.
 - [ ] Provided a clear summary of changes?
 - [ ] Linked the GitHub issue in the commit message?
 - [ ] Checked off acceptance criteria in GitHub?
-- [ ] **Activated `wizard-context-updater`?**
+- [ ] **Activated `context-updater`?**
 - [ ] `PROJECT_CONTEXT.md` and `CODING_RULES.md` reflect the new state?
