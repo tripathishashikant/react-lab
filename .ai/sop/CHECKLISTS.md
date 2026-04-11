@@ -10,8 +10,8 @@ Use these checklists at the end of each phase to verify completion.
 ## Phase 2: GitHub & Milestone Alignment
 - [ ] Searched `gh issue list` for duplicates?
 - [ ] Created/Found an issue with a `p0`/`p1`/`p2` label?
-- [ ] **Assigned the issue to the active Milestone?**
-- [ ] **Confirmed target Milestone Branch exists?**
+- [ ] Assigned the issue to the active Milestone?
+- [ ] Confirmed target Milestone Branch exists?
 
 ## Phase 3: Exploration
 - [ ] Grepped for relevant components?
@@ -42,6 +42,6 @@ Use these checklists at the end of each phase to verify completion.
 - [ ] Provided a clear summary of changes?
 - [ ] Linked the GitHub issue in the commit message?
 - [ ] Checked off acceptance criteria in GitHub?
-- [ ] **Targeted PR to the Milestone Branch?**
-- [ ] **Activated `context-updater`?**
+- [ ] Targeted PR to the Milestone Branch?
+- [ ] Activated `context-updater`?
 - [ ] `PROJECT_CONTEXT.md` and `CODING_RULES.md` reflect the new state?

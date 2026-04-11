@@ -1,19 +1,19 @@
 # Code Style Rules - ReactLab
 
-React aur SCSS coding standards for the Senior Architect SOP.
+Professional React and SCSS coding standards for the Senior Architect SOP.
 
 ## React Conventions
-- [ ] Use Functional Components with `export default`.
-- [ ] Name hooks with `use` prefix (e.g., `useFeatureData`).
-- [ ] Prefer local state unless data is shared across multiple features.
-- [ ] Use `useEffect` sparingly and always provide cleanup functions.
+- [ ] Use Functional Components with `export default` for main page exports.
+- [ ] Prefix custom hooks with `use` (e.g., `useFeatureData`).
+- [ ] Prefer local state (`useState`) unless data is shared across multiple features.
+- [ ] Provide mandatory cleanup functions for all `useEffect` hooks.
 
 ## SCSS Standards
-- [ ] Use variables from `src/styles/abstract/`.
-- [ ] Use mixins for reusable visual patterns.
-- [ ] Avoid inline styles and Tailwind utility classes (stay pure SCSS).
-- [ ] Use `c-` class prefix for shared components.
+- [ ] Utilize variables exclusively from `src/styles/abstract/`.
+- [ ] Use mixins for reusable visual patterns and layout logic.
+- [ ] Avoid inline styles and utility-first classes (stay with pure SCSS).
+- [ ] Apply the `c-` class prefix for all shared components.
 
 ## Documentation (JSDoc)
-- [ ] Document complex logic and hook parameters.
-- [ ] Add comments for "Why" (intent), not "What" (action).
+- [ ] Document complex logic, hook parameters, and component props.
+- [ ] Focus comments on "Why" (intent) rather than "What" (action).

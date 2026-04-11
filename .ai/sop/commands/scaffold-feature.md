@@ -3,7 +3,7 @@ description: Automates the creation of a new React feature with standard folder 
 
 # Scaffold Feature Command
 
-Ye command `src/features/` ke andar ek naya feature module create karti hai. Ise hamesha Phase 5 (Implementation) ke starting mein use karna chahiye.
+This command creates a new feature module inside `src/features/`. It should be invoked during Phase 5 (Implementation) to maintain architectural consistency.
 
 ## Workflow
 
@@ -17,18 +17,18 @@ Ye command `src/features/` ke andar ek naya feature module create karti hai. Ise
 - **`examples/[Feature]Example.jsx`**: Isolated example component.
 
 ### 3. Routing Registry
-- Update `src/app/router/routeRegistry.jsx` (ya placeholder) with the new feature metadata.
-- Ensure the feature is visible in the Sidebar navigation.
+- Update `src/app/router/routeRegistry.jsx` with the new feature metadata.
+- Ensure the feature is correctly registered for Sidebar navigation.
 
 ### 4. Style File
-- Create `[feature].scss` inside the feature folder.
-- Import it in the main page component.
+- Create `[feature].scss` within the feature folder.
+- Import the SCSS file in the main page component.
 
 ## Execution Rules
-- [ ] Folder name in `camelCase`.
-- [ ] Component names in `PascalCase`.
-- [ ] No circular dependencies.
-- [ ] Use `export default` for main page.
+- [ ] Folder names must be in `camelCase`.
+- [ ] Component names must be in `PascalCase`.
+- [ ] Ensure no circular dependencies are introduced.
+- [ ] Use `export default` for main page exports.
 
 ## Result
-A fully functional, empty feature module ready for TDD-based implementation.
+A fully functional, scaffolded feature module ready for TDD-based implementation.
