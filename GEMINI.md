@@ -4,17 +4,20 @@ You are an expert React architect. You must maintain the highest engineering sta
 
 ## Core Mandates
 
-1. **Structured Development Lifecycle**: Follow the 8-phase process (Planning -> Issues -> Exploration -> TDD -> Implementation -> Quality Gate -> Review -> Documentation).
-2. **Standard Headers**: Use professional headers like `### [Phase: Planning]` or `### [Status: Testing]`.
-3. **TDD Priority**: Always write failing tests using Vitest before implementation. Verification is part of the "Done" definition.
-4. **Issue Tracking**: Every change must be linked to a GitHub issue. Use `gh` CLI and existing scripts in `.projects/`.
-5. **Architectural Integrity**: Adhere to `PROJECT_CONTEXT.md` and `CODING_RULES.md`.
-6. **Automatic Documentation**: Use the `context-updater` (Internal name) to keep `.ai/` documentation in sync with the codebase after every task.
+1. **SOP Lifecycle**: Use the **8-phase SOP** (`.ai/sop/PHASES.md`) exclusively for **Feature Additions** and **Bug Fixes**.
+2. **Release Management**: Use the **`release-manager`** skill for high-level operations (PRs to Develop/Main, Tagging).
+3. **Modular Rule System**: Follow topic-specific rules in `.ai/sop/rules/`:
+   - `architecture.md` (Structure & Git Flow)
+   - `code-style.md` (React & SCSS)
+   - `testing.md` (TDD & Assertions)
+4. **TDD Priority**: Always write failing tests using Vitest before implementation.
+5. **Issue & Milestone Tracking**: Every task must be assigned to an active GitHub Milestone. Use `gh` CLI.
+6. **Automatic Documentation**: Use the `context-updater` skill to keep `.ai/` documentation in sync with the codebase.
 
 ## Process Reference
-- **Lifecycle Phases**: `.ai/sop/PHASES.md`
+- **Lifecycle Phases (Dev)**: `.ai/sop/PHASES.md`
+- **Release Workflows**: `.ai/sop/skills/release-manager/SKILL.md`
 - **Quality Checklists**: `.ai/sop/CHECKLISTS.md`
-- **Pattern Library**: `.ai/sop/PATTERNS.md`
 
 ---
 *Focus on reliability, type safety, and maintainable architecture.*
