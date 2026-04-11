@@ -1,5 +1,7 @@
+---
 name: vercel-deployer
 description: Automates the Vercel deployment lifecycle for preview and production environments. Manages environment variable synchronization and deployment logging. Use this only when a manual or production deployment is required.
+---
 
 # Vercel Deployer
 

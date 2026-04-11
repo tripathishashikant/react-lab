@@ -1,5 +1,7 @@
+---
 name: context-updater
 description: Automates the update of .ai/PROJECT_CONTEXT.md and .ai/CODING_RULES.md after each task to ensure documentation matches the current codebase state. Use this skill in Phase 8 of the SOP workflow to capture new features, architectural changes, and coding patterns.
+---
 
 # Context Updater
 

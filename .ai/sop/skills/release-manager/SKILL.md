@@ -1,5 +1,7 @@
+---
 name: release-manager
 description: Independent workflows for the release lifecycle. Handles Milestone-to-Develop PRs, Develop-to-Main PRs, and Git Tagging/Releases as separate, independent tasks. Use this only when a specific release operation is requested.
+---
 
 # Release Manager
 
