@@ -1,6 +1,6 @@
 # SOP Phases - ReactLab Methodology
 
-The SOP workflow is a strictly enforced 8-phase development cycle. Every feature or bug fix must progress through these phases sequentially.
+The SOP workflow is a strictly enforced 8-phase development cycle for **Feature Addition** and **Bug Fixing**.
 
 ## Phase 1: Understanding & Planning
 - **Goal**: Understand the request and map it to the project rules.
@@ -43,8 +43,7 @@ The SOP workflow is a strictly enforced 8-phase development cycle. Every feature
 ## Phase 8: Pull Request & Verification
 - **Goal**: Finalize, document, and update the "Source of Truth".
 - **Action**: 
-    1. **Targeted PR**: Open a PR from the feature branch **into the Milestone branch** (not `develop`).
-    2. **Milestone Completion**: Once all issues in a milestone are Done, open a PR from the Milestone branch into `develop`.
-    3. **Release**: Open a PR from `develop` into `main` for release, create a git tag, and release.
-    4. **Activate `context-updater`**: Automatically update documentation.
-- **Output**: A completed task, verified and merged into the Milestone track.
+    1. **Targeted PR**: Open a PR from the feature branch **into the Milestone branch**.
+    2. **Checklist Verification**: Ensure all acceptance criteria are met.
+    3. **Activate `context-updater`**: Automatically update documentation.
+- **Output**: A completed feature/fix merged into the Milestone track.
