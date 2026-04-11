@@ -19,7 +19,7 @@ Use these checklists at the end of each phase to verify completion.
 - [ ] Verified component APIs?
 
 ## Phase 4: TDD
-- [ ] Created `X.test.jsx` for the feature?
+- [ ] Created `X.test.jsx` for the feature, fix, or refactor?
 - [ ] Tests fail with clear error messages?
 - [ ] Covered core logic and edge cases?
 
@@ -38,10 +38,10 @@ Use these checklists at the end of each phase to verify completion.
 - [ ] Verified accessibility (ARIA, focus, semantic HTML)?
 - [ ] Removed all `console.log` and debugging?
 
-## Phase 8: Closure
-- [ ] Provided a clear summary of changes?
+## Phase 8: Manual Review & Controlled Closure
+- [ ] **Presented changes for manual inspection?**
+- [ ] **User explicitly approved the implementation?**
 - [ ] Linked the GitHub issue in the commit message?
-- [ ] Checked off acceptance criteria in GitHub?
 - [ ] Targeted PR to the Milestone Branch?
 - [ ] Activated `context-updater`?
 - [ ] `PROJECT_CONTEXT.md` and `CODING_RULES.md` reflect the new state?
