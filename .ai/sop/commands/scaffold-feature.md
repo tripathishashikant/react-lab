@@ -1,5 +1,7 @@
+---
 name: scaffold-feature
 description: Automates the creation of a new React feature with standard folder structure, pages, examples, and index exports. Use this command to ensure architectural consistency.
+---
 
 # Scaffold Feature Command
 

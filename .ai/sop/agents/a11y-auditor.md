@@ -1,5 +1,7 @@
+---
 name: a11y-auditor
 description: Specialized accessibility reviewer for React components. Audits HTML semantics, ARIA roles, keyboard focus management, and screen reader compatibility.
+---
 
 # Accessibility (A11y) Auditor
 

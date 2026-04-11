@@ -1,5 +1,7 @@
+---
 name: security-auditor
 description: Specialized security auditor for React and JavaScript. Identifies common vulnerabilities like XSS, CSRF, insecure data handling, and secret leaks.
+---
 
 # Frontend Security Auditor
 
