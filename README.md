@@ -52,25 +52,7 @@ This structure ensures that the `develop` branch remains stable while new featur
 
 ## Project Structure
 
-The project separates concerns by folder:
-
-```text
-src/
-  app/
-    router/
-  docs/
-    styleguide/
-  features/
-    use-state/
-  layouts/
-  navigation/
-  shared/
-  styles/
-  system/
-    notFound/
-```
-
-For a detailed explanation of the folder structure, import rules, and coding standards, refer to the [PROJECT_CONTEXT.md](.ai/PROJECT_CONTEXT.md) file.
+The project follows a strict, feature-based architecture. For a detailed explanation of the folder structure, import rules, and coding standards, please refer to the [GEMINI.md](GEMINI.md) file.
 
 ## Adding a New Feature
 
@@ -130,10 +112,39 @@ The project uses SCSS for styling, following a combination of SMACSS and BEM pri
 
 ## AI Usage
 
-AI tools are encouraged for this project, but they **must** follow the rules and guidelines outlined in the following documents:
+AI tools are encouraged for this project, but they **must** follow the rules and guidelines outlined in the master project document:
 
-- [**.ai/PROJECT_CONTEXT.md**](.ai/PROJECT_CONTEXT.md): The master guide to the project's architecture, rules, and standards.
-- [**.ai/CODING_RULES.md**](.ai/CODING_RULES.md): Specific rules for generating code.
-- [**.ai/PROMPT_GUIDE.md**](.ai/PROMPT_GUIDE.md): A guide to writing effective prompts for AI assistants.
+- [**GEMINI.md**](GEMINI.md): The master guide to the project's architecture, rules, standards, and SOP.
 
 **Any deviation from these rules is considered a bug.**
+
+## Using the Gemini CLI
+
+This project is optimized for the [Gemini CLI](https://github.com/google/gemini-cli). The `.gemini` directory contains project-specific skills and commands that automate the development lifecycle according to our Senior Architect SOP.
+
+### 1. Project-Specific Skills
+Skills are automated agents that handle repetitive tasks. You can activate them using the `activate_skill` tool or by asking the agent to perform the task.
+
+- **`context-updater`**: Keeps `GEMINI.md` in sync with your changes. Use this in Phase 8 of the SOP.
+  - *Example*: "Use the context-updater skill to update GEMINI.md with the new component I added."
+- **`vercel-deployer`**: Handles preview and production deployments.
+  - *Example*: "Deploy my current changes to Vercel for a preview."
+- **`release-manager`**: Automates PR creation and tagging.
+
+### 2. Custom Commands
+Custom slash commands provide shortcuts for common architectural tasks.
+
+- **`/scaffold-feature`**: Automatically creates the directory structure for a new learning feature.
+  - *Usage*: `/scaffold-feature [featureName]`
+
+### 3. Automated SOP Workflow
+When you give the Gemini CLI a directive, it will automatically follow the **8-Phase SOP** defined in `.gemini/PHASES.md`:
+1. **Research** the task.
+2. **Strategy** development.
+3. **Execution** (TDD first).
+4. **Validation** (tests and linting).
+5. **Adversarial Review**.
+6. **Manual Review** (presents changes for your approval).
+
+*Note: The agent will never commit or push changes without your explicit permission.*
+
