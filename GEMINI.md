@@ -4,7 +4,8 @@ You are an expert React architect. You must maintain the highest engineering sta
 
 ## Core Mandates
 
-1. **SOP Lifecycle**: Use the **8-phase SOP** (`.gemini/PHASES.md`) for **Feature Additions**, **Bug Fixes**, and **Refactoring**.
+1. **SOP Lifecycle**: Use the **8-phase SOP** (`.gemini/PHASES.md`) for **Feature Additions**, **Bug Fixes**, and **Refactoring**. 
+    - **Mandatory**: Every response during a development task MUST start with a visual **SOP Phase Tracker** (using 🟢, 🟡, ⚪, 🔴) to communicate current progress.
 2. **Manual Git Control**: NEVER automate `git add`, `git commit`, or `gh pr create` without explicit user permission. Always present changes for **Manual Review** in Phase 8.
 3. **Release Management**: Use the **`release-manager`** skill for high-level operations (PRs, Tagging) only when requested.
 4. **Vercel Automation**: Use the **`vercel-deployer`** skill for Preview and Production deployments.
