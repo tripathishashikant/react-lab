@@ -12,7 +12,7 @@ export default function Card({
 }) {
   return (
     <div className={`c-card ${className}`} {...props}>
-      {(title || action) && (
+      {(title || difficulty) && (
         <header className="c-card__header">
           {title && <h3 className="c-card__title">{title}</h3>}
           {difficulty && <Badge difficulty={difficulty} />}
@@ -23,9 +23,11 @@ export default function Card({
         {children}
       </section>
 
-      <footer className="c-card__footer">
-        {action && <div className="c-card__action">{action}</div>}
-      </footer>
+      {action && (
+        <footer className="c-card__footer">
+          <div className="c-card__action">{action}</div>
+        </footer>
+      )}
     </div>
   );
 }

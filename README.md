@@ -24,6 +24,14 @@ ReactLab is a structured learning environment for mastering React concepts in a 
 
 3. **Open your browser** to `http://localhost:5173` (or the address shown in your terminal).
 
+4. **Run tests:**
+
+    ```bash
+    npm run test           # Run all tests once (Jest)
+    npm run test:watch     # Run tests in watch mode
+    npm run test:coverage  # Generate coverage report
+    ```
+
 ## Deployment
 
 The site is deployed on Vercel and can be accessed at the following URL:
@@ -78,9 +86,9 @@ src/features/newFeature/
 
 ## Docs and System Pages
 
-- Documentation surfaces live in `src/docs/`. The current docs entry point is the styleguide at `/docs`.
-- App-level fallback pages live in `src/system/`. The current example is the not-found page.
-- Learning features only live in `src/features/`.
+- **Documentation System**: Metadata-driven documentation for shared UI components lives in `src/docs/`. It features a dynamic engine that renders component APIs (props), interactive examples, and usage guidance.
+- **System Pages**: App-level fallback pages live in `src/system/` (e.g., the not-found page).
+- **Learning features**: Education modules live in `src/features/`.
 
 ## Styling and SCSS
 

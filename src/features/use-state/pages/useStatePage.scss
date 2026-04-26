@@ -1,0 +1,10 @@
+@use '@/styles/abstract';
+
+.p-use-state {
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}

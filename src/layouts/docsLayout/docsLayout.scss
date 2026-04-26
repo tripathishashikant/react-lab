@@ -1,9 +1,12 @@
+@use '@/styles/abstract';
+
 .docs-layout {
   &__header {
-    margin-bottom: var(--space-lg);
+    margin-bottom: abstract.rem(16); // Reduced from var(--space-lg)
   }
 
   &__description {
-    margin-top: var(--space-xs);
+    margin-top: abstract.rem(4); // Tightened
+    color: var(--color-text-muted);
   }
 }
