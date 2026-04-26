@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { FiArrowLeft } from 'react-icons/fi';
 import DocPropsTable from '@/docs/system/components/DocPropsTable';
 import DocPreview from '@/docs/system/components/DocPreview';
 
@@ -7,7 +9,17 @@ export default function DocPage({ registry }) {
   return (
     <div className="p-doc-page">
       <header className="p-doc-page__header">
-        <h2 className="p-doc-page__title">{registry.title}</h2>
+        <div className="p-doc-page__header-top">
+          <h2 className="p-doc-page__title">{registry.title}</h2>
+          
+          <nav className="p-doc-page__nav">
+            <Link to="/docs" className="u-button-like u-button-like--ghost u-button-like--sm u-flex u-flex-center" style={{ gap: '0.5rem' }}>
+              <FiArrowLeft size={14} />
+              <span>Back to Components</span>
+            </Link>
+          </nav>
+        </div>
+        
         <p className="p-doc-page__description">{registry.description}</p>
       </header>
 

@@ -64,3 +64,24 @@
     @include abstract.button-like-size(lg);
   }
 }
+
+/* MASONRY */
+.u-masonry-container {
+  column-count: 1;
+  column-gap: var(--space-md);
+
+  @include abstract.respond(md) {
+    column-count: 2;
+  }
+
+  @include abstract.respond(lg) {
+    column-count: 3;
+  }
+
+  & > * {
+    break-inside: avoid;
+    margin-bottom: var(--space-md);
+    display: inline-block;
+    width: 100%;
+  }
+}

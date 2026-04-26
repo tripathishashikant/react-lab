@@ -1,12 +1,9 @@
 @use '@/styles/abstract';
 
 .docs-layout {
-  &__header {
-    margin-bottom: abstract.rem(16); // Reduced from var(--space-lg)
-  }
-
-  &__description {
-    margin-top: abstract.rem(4); // Tightened
-    color: var(--color-text-muted);
+  width: 100%;
+  
+  &__content {
+    // Content padding is handled by individual pages
   }
 }
