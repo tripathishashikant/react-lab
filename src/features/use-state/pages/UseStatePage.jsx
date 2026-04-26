@@ -18,7 +18,7 @@ function UseStatePage() {
             title={example.title}
             difficulty={example.difficulty}
             action={
-              <Link to={example.path} className="c-button c-button--primary">
+              <Link to={example.path} className="u-button-like u-button-like--primary">
                 View
               </Link>
             }
