@@ -3,7 +3,8 @@
 Professional testing standards for the Senior Architect SOP.
 
 ## TDD Mandates
-- [ ] Write failing unit tests (`vitest`) before starting any implementation.
+- [ ] Write failing unit tests (`jest`) before starting any implementation.
+- [ ] Maintain a mirrored directory structure in the root `tests/` folder for all test files.
 - [ ] No code change is "Done" without corresponding passing tests.
 
 ## Testing Standards

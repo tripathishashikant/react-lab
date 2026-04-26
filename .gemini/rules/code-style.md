@@ -3,6 +3,8 @@
 Professional React and SCSS coding standards for the Senior Architect SOP.
 
 ## React Conventions
+- [ ] Consult First: Discuss implementation plans with the developer before writing code.
+- [ ] Path Aliases: ALWAYS use the `@/` alias for all imports within the `src` directory.
 - [ ] Use Functional Components with `export default` for main page exports.
 - [ ] Prefix custom hooks with `use` (e.g., `useFeatureData`).
 - [ ] Prefer local state (`useState`) unless data is shared across multiple features.

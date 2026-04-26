@@ -1,11 +1,11 @@
 import { useStateFeature } from '@/features/use-state'
-import { styleguide } from '@/docs/styleguide'
+import { docSystem } from '@/docs/system'
 import { notFoundRoute } from '@/system/notFound'
 import ExampleLayout from '@/layouts/exampleLayout/ExampleLayout'
 
 export const learningFeatures = [useStateFeature]
 
-export const docsPages = [styleguide]
+export const docsPages = [docSystem]
 
 export const utilityRoutes = [notFoundRoute]
 
@@ -49,14 +49,22 @@ export function createLearningFeatureRoutes() {
 }
 
 export function createDocsRoutes() {
-  return docsPages.map((docPage) => ({
-    id: docPage.id,
+  return docsPages.map((docSystem) => ({
+    id: docSystem.id,
+    path: docSystem.path,
     children: [
       {
-        path: docPage.path,
-        Component: docPage.component,
+        index: true,
+        Component: docSystem.component,
         handle: {
-          docPage,
+          docPage: docSystem,
+        },
+      },
+      {
+        path: 'components/:docId',
+        Component: docSystem.component,
+        handle: {
+          docPage: docSystem,
         },
       },
     ],

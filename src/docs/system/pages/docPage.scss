@@ -1,0 +1,95 @@
+@use '@/styles/abstract';
+
+.p-doc-page {
+  width: 100%;
+
+  &__header {
+    margin-bottom: abstract.rem(20);
+    border-bottom: 1px solid var(--color-border-subtle);
+    padding-bottom: abstract.rem(8);
+
+    .p-doc-page__title {
+      font-size: var(--text-lg);
+      margin-bottom: abstract.rem(2);
+      color: var(--color-text);
+    }
+
+    .p-doc-page__description {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+  }
+
+  &__section {
+    margin-bottom: abstract.rem(24);
+
+    &-title {
+      font-size: var(--text-md);
+      margin-bottom: abstract.rem(2);
+      color: var(--color-text);
+      display: flex;
+      align-items: center;
+      
+      &::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: var(--color-border-subtle);
+        margin-left: abstract.rem(12);
+      }
+    }
+  }
+
+  &__usage {
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    white-space: pre-line;
+    font-size: var(--text-sm);
+  }
+
+  &__examples {
+    display: flex;
+    flex-direction: column;
+    gap: abstract.rem(20);
+  }
+}
+
+.c-doc-preview {
+  &__title {
+    font-size: var(--text-sm);
+    font-weight: var(--fw-semibold);
+    margin-bottom: abstract.rem(2);
+    color: var(--color-text);
+  }
+
+  &__description {
+    margin-bottom: abstract.rem(6);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  &__card {
+    margin-bottom: 0;
+  }
+
+  &__demo {
+    padding: abstract.rem(16);
+    background-color: var(--color-surface);
+    border-radius: var(--radius-sm);
+  }
+
+  &__code {
+    margin-top: abstract.rem(4);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+}
+
+.c-doc-props {
+  &__title {
+    font-size: var(--text-sm);
+    font-weight: var(--fw-semibold);
+    margin-bottom: abstract.rem(8);
+    color: var(--color-text);
+  }
+}
