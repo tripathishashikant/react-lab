@@ -1,6 +1,8 @@
+import { Suspense } from 'react';
 import Tabs from '@/shared/components/tabs/Tabs';
 import TabItem from '@/shared/components/tabs/TabItem';
 import Code from '@/shared/components/code/Code';
+import Loader from '@/shared/components/loader/Loader';
 
 import '@/layouts/exampleLayout/exampleLayout.scss';
 
@@ -10,7 +12,9 @@ const ExampleLayout = ({ exampleComponent, code, notes }) => {
       <Tabs>
         <TabItem title="Example">
           <div className="example-layout__component">
-            {exampleComponent}
+            <Suspense fallback={<Loader />}>
+              {exampleComponent}
+            </Suspense>
           </div>
         </TabItem>
         <TabItem title="Code">

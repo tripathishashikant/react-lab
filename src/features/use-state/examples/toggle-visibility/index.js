@@ -1,5 +1,4 @@
-import ToggleVisibility from '@/features/use-state/examples/toggle-visibility/ToggleVisibility'
-import code from '@/features/use-state/examples/toggle-visibility/ToggleVisibility.jsx?raw'
+import { lazy } from 'react';
 
 export default {
   id: 'toggle-visibility',
@@ -7,6 +6,6 @@ export default {
   title: 'Toggle Visibility',
   description: 'A component that toggles the visibility of an element using `useState`.',
   difficulty: 'difficult',
-  component: ToggleVisibility,
-  code,
+  component: lazy(() => import('@/features/use-state/examples/toggle-visibility/ToggleVisibility')),
+  code: () => import('@/features/use-state/examples/toggle-visibility/ToggleVisibility.jsx?raw').then(m => m.default),
 }

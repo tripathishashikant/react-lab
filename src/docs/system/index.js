@@ -1,10 +1,10 @@
-import Documentation from '@/docs/system/pages/Documentation';
+import { lazy } from 'react';
 import { docsRegistry } from '@/docs/system/registry';
 
 export const docSystem = {
   id: 'docs',
   path: '/docs',
-  component: Documentation,
+  component: lazy(() => import('@/docs/system/pages/Documentation')),
   title: 'Documentation',
   description: 'Metadata-driven documentation for shared UI components.',
   items: docsRegistry.map(reg => ({
