@@ -1,15 +1,32 @@
-import { useState } from 'react';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { FiClipboard, FiCheck } from 'react-icons/fi';
 import '@/shared/components/code/code.scss'
 
+const LazyHighlighter = lazy(() => import('./LazyHighlighter'));
+
 function Code({ code, language = 'jsx' }) {
   const [isCopied, setIsCopied] = useState(false);
+  const [resolvedCode, setResolvedCode] = useState('');
+
+  useEffect(() => {
+    let isMounted = true;
+
+    if (typeof code === 'function') {
+      code().then(val => {
+        if (isMounted) setResolvedCode(val);
+      });
+    } else {
+      setResolvedCode(code || '');
+    }
+
+    return () => {
+      isMounted = false;
+    };
+  }, [code]);
 
   const handleCopy = async () => {
     try {
-      await navigator.clipboard.writeText(code);
+      await navigator.clipboard.writeText(resolvedCode);
       setIsCopied(true);
       setTimeout(() => setIsCopied(false), 5000);
     } catch (err) {
@@ -26,9 +43,11 @@ function Code({ code, language = 'jsx' }) {
       >
         {isCopied ? <FiCheck /> : <FiClipboard />}
       </button>
-      <SyntaxHighlighter language={language} style={materialDark}>
-        {code}
-      </SyntaxHighlighter>
+      <Suspense fallback={<div className="c-code__loading">Loading code viewer...</div>}>
+        <LazyHighlighter language={language}>
+          {resolvedCode}
+        </LazyHighlighter>
+      </Suspense>
     </div>
   )
 }
