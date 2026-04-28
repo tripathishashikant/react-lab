@@ -1,4 +1,5 @@
-import { lazy } from 'react';
+import Counter from '@/features/use-state/examples/counter/Counter'
+import code from '@/features/use-state/examples/counter/Counter.jsx?raw'
 
 export default {
   id: 'counter',
@@ -6,6 +7,6 @@ export default {
   title: 'Counter',
   description: 'A simple counter example to demonstrate the basic usage of `useState`.',
   difficulty: 'easy',
-  component: lazy(() => import('@/features/use-state/examples/counter/Counter')),
-  code: () => import('@/features/use-state/examples/counter/Counter.jsx?raw').then(m => m.default),
+  component: Counter,
+  code,
 }

@@ -35,6 +35,19 @@
 .u-text-muted { color: var(--color-text-muted); }
 .u-text-primary { color: var(--color-primary); }
 
+/* MASONRY GRID */
+.u-masonry-container {
+  column-width: 300px;
+  column-gap: 1.5rem;
+}
+
+.u-masonry-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  break-inside: avoid;
+}
+
 /* BUTTON-LIKE LINK */
 .u-button-like {
   @include abstract.button-like-base;
@@ -62,26 +75,5 @@
 
   &--lg {
     @include abstract.button-like-size(lg);
-  }
-}
-
-/* MASONRY */
-.u-masonry-container {
-  column-count: 1;
-  column-gap: var(--space-md);
-
-  @include abstract.respond(md) {
-    column-count: 2;
-  }
-
-  @include abstract.respond(lg) {
-    column-count: 3;
-  }
-
-  & > * {
-    break-inside: avoid;
-    margin-bottom: var(--space-md);
-    display: inline-block;
-    width: 100%;
   }
 }

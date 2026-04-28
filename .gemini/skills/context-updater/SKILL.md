@@ -4,6 +4,9 @@ This skill ensures that the project's "Source of Truth" document (`GEMINI.md`) s
 
 ## Metadata
 
+- **Name**: context-updater
+- **Description**: Automates the update of GEMINI.md after each task to ensure documentation matches the current codebase state.
+
 ## Workflows
 
 ### 1. Identify Changes

@@ -1,5 +1,4 @@
 import { Link, useMatches } from 'react-router-dom';
-import '@/features/use-state/pages/useStatePage.scss';
 
 import Card from '@/shared/components/card/Card';
 
@@ -11,9 +10,10 @@ function UseStatePage() {
 
   return (
     <div className="p-use-state">
-      <div className="p-use-state__list">
+      <div className="p-use-state__list u-masonry-container">
         {examples.map((example) => (
           <Card
+            className="u-masonry-item"
             key={example.id}
             title={example.title}
             difficulty={example.difficulty}

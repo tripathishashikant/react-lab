@@ -18,12 +18,6 @@ export const routes = [
   {
     path: '/',
     Component: MainLayout,
-    handle: {
-      seo: {
-        title: 'Home',
-        description: 'React Lab - A comprehensive playground to learn and experiment with React concepts, hooks, and patterns.',
-      },
-    },
     children: [
       {
         index: true,
@@ -42,9 +36,6 @@ export const routes = [
       {
         path: '*',
         Component: fallbackRoute.component,
-        handle: {
-          seo: fallbackRoute.seo,
-        },
       },
     ],
   },

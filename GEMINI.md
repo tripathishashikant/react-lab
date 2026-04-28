@@ -4,17 +4,15 @@ You are an expert React architect. You must maintain the highest engineering sta
 
 ## Core Mandates
 
-1. **SOP Lifecycle**: Use the **8-phase SOP** (`.gemini/PHASES.md`) for **Feature Additions**, **Bug Fixes**, and **Refactoring**. 
-    - **Mandatory**: Every response during a development task MUST start with a visual **SOP Phase Tracker** (using 🟢, 🟡, ⚪, 🔴) to communicate current progress.
+1. **SOP Lifecycle**: Use the **8-phase SOP** (`.gemini/PHASES.md`) for **Feature Additions**, **Bug Fixes**, and **Refactoring**.
 2. **Manual Git Control**: NEVER automate `git add`, `git commit`, or `gh pr create` without explicit user permission. Always present changes for **Manual Review** in Phase 8.
-3. **Feature Branching**: ALWAYS create a feature branch before starting any implementation. Branch names MUST follow the pattern: `<type>/<issue-number>-<description>`. Use the script `.gemini/hooks/validate-branch.sh` to verify.
-4. **Release Management**: Use the **`release-manager`** skill for high-level operations (PRs, Tagging) only when requested.
-5. **Vercel Automation**: Use the **`vercel-deployer`** skill for Preview and Production deployments.
-6. **Modular Rule System**: Follow topic-specific rules in `.gemini/rules/`: `architecture.md`, `code-style.md`, `testing.md`.
-7. **Specialized Experts**: Utilize sub-agents: `code-reviewer`, `security-auditor`, `a11y-auditor`.
-8. **Custom Automation**: Use slash commands: `/scaffold-feature`.
-9. **TDD Priority**: Always write failing tests using Jest before implementation.
-10. **Automatic Documentation**: Use the `context-updater` skill for post-task sync.
+3. **Release Management**: Use the **`release-manager`** skill for high-level operations (PRs, Tagging) only when requested.
+4. **Vercel Automation**: Use the **`vercel-deployer`** skill for Preview and Production deployments.
+5. **Modular Rule System**: Follow topic-specific rules in `.gemini/rules/`: `architecture.md`, `code-style.md`, `testing.md`.
+6. **Specialized Experts**: Utilize sub-agents: `code-reviewer`, `security-auditor`, `a11y-auditor`.
+7. **Custom Automation**: Use slash commands: `/scaffold-feature`.
+8. **TDD Priority**: Always write failing tests using Vitest before implementation.
+9. **Automatic Documentation**: Use the `context-updater` skill for post-task sync.
 
 ## Process Reference
 
@@ -33,10 +31,6 @@ You are an expert React architect. You must maintain the highest engineering sta
 - Every commit, issue, and feature must be tracked
 
 ### Folder Structure Overview
-
-#### `tests/` (root)
-
-Centralized testing infrastructure. Mirrored structure of `src/` for unit tests. Uses Jest.
 
 #### `src/` (root)
 
@@ -59,18 +53,9 @@ Layouts define **structure**, not content.
 
 - `mainLayout/`: Top header, Left sidebar, Scrollable content area. No state or business logic.
 - `featureLayout/`: Used for feature pages.
-#### `exampleLayout/`: Used for isolated examples.
-
-#### `docs/` – Documentation system
-
-Metadata-driven documentation for shared UI components.
-
-- `components/`: Reusable documentation UI (DocPage, DocPreview).
-- `registry/`: Structured metadata for each documented component.
-- `pages/`: Documentation entry points.
+- `exampleLayout/`: Used for isolated examples.
 
 #### `features/` – Learning modules (most important)
-
 
 Each folder = **one React concept** (e.g., `useState`, `useEffect`). Nothing crosses feature boundaries.
 
@@ -104,8 +89,6 @@ Uses **SCSS**.
 
 ## AI Coding Rules
 
-- **Consult First**: ALWAYS discuss the implementation plan with the developer and get approval BEFORE writing code.
-- **Path Aliases**: ALWAYS use the `@/` alias for all imports within the `src` directory.
 - Follow feature-based structure strictly.
 - Respect existing folders and do not invent patterns.
 - One responsibility per file/component.

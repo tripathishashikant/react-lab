@@ -1,10 +1,11 @@
-@use 'sass:math';
+/* PX → REM */
 @use 'sass:map';
 
 @function rem($px) {
-  @return math.div($px, 10) * 1rem;
+  @return ($px / 10) * 1rem;
 }
 
+/* Z-Index scale */
 @function z($level) {
   $map: (
     base: 1,
