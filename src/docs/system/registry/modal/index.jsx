@@ -1,6 +1,4 @@
-import { useState } from 'react';
-import Modal from '@/shared/components/modal/Modal';
-import Button from '@/shared/components/button/Button';
+import BasicModalExample from './BasicModalExample';
 
 export const modalRegistry = {
   id: 'modal',
@@ -37,27 +35,7 @@ export const modalRegistry = {
     {
       name: 'Basic Modal',
       description: 'A standard modal with a header, body, and footer.',
-      render: () => {
-        const [isOpen, setIsOpen] = useState(false);
-        return (
-          <>
-            <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
-            <Modal
-              isOpen={isOpen}
-              onClose={() => setIsOpen(false)}
-              title="Example Modal"
-              footer={
-                <div style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-end' }}>
-                  <Button variant="ghost" onClick={() => setIsOpen(false)}>Cancel</Button>
-                  <Button onClick={() => setIsOpen(false)}>Confirm</Button>
-                </div>
-              }
-            >
-              <p>This is the modal body content. You can put anything here.</p>
-            </Modal>
-          </>
-        );
-      },
+      render: () => <BasicModalExample />,
       code: `const [isOpen, setIsOpen] = useState(false);
 <Button onClick={() => setIsOpen(true)}>Open Modal</Button>
 <Modal
