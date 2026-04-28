@@ -1,9 +1,9 @@
-.docs-layout {
-  &__header {
-    margin-bottom: var(--space-lg);
-  }
+@use '@/styles/abstract';
 
-  &__description {
-    margin-top: var(--space-xs);
+.docs-layout {
+  width: 100%;
+  
+  &__content {
+    // Content padding is handled by individual pages
   }
 }

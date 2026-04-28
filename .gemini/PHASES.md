@@ -4,7 +4,7 @@ The SOP workflow is a strictly enforced 8-phase development cycle for **Feature 
 
 ## Phase 1: Understanding & Planning
 - **Goal**: Understand the request and map it to the project rules.
-- **Action**: Read `PROJECT_CONTEXT.md`, `CODING_RULES.md`, and any related documentation.
+- **Action**: Read `GEMINI.md` and any related documentation.
 - **Output**: A clear plan and technical strategy summary.
 
 ## Phase 2: Issue & Milestone Alignment
@@ -22,7 +22,7 @@ The SOP workflow is a strictly enforced 8-phase development cycle for **Feature 
 
 ## Phase 4: Test-Driven Development (TDD)
 - **Goal**: Define "done" through failing tests.
-- **Action**: Write unit/integration tests using Vitest that assert the expected behavior.
+- **Action**: Write unit/integration tests using Jest that assert the expected behavior.
 - **Output**: Failing tests that accurately represent the new feature, fix, or refactor.
 
 ## Phase 5: Minimal Implementation
