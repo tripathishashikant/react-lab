@@ -6,18 +6,21 @@ const LazyHighlighter = lazy(() => import('./LazyHighlighter'));
 
 function Code({ code, language = 'jsx' }) {
   const [isCopied, setIsCopied] = useState(false);
-  const [resolvedCode, setResolvedCode] = useState('');
+  const [resolvedCode, setResolvedCode] = useState(() => {
+    return typeof code === 'function' ? '' : (code || '');
+  });
 
   useEffect(() => {
-    let isMounted = true;
-
-    if (typeof code === 'function') {
-      code().then(val => {
-        if (isMounted) setResolvedCode(val);
-      });
-    } else {
-      setResolvedCode(code || '');
+    if (typeof code !== 'function') {
+      // If code is not a function, the state is already correctly initialized
+      // via the useState initializer above. We only need to sync if it's a function.
+      return;
     }
+
+    let isMounted = true;
+    code().then(val => {
+      if (isMounted) setResolvedCode(val);
+    });
 
     return () => {
       isMounted = false;
