@@ -1,5 +1,4 @@
 import { useParams, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import DocPage from '@/docs/system/components/DocPage';
 import { getDocById, docsRegistry } from '@/docs/system/registry';
 import Card from '@/shared/components/card/Card';
@@ -11,10 +10,6 @@ export default function Documentation() {
   if (!docId) {
     return (
       <div className="p-doc-overview">
-        <Helmet>
-          <title>Components Overview | React Lab</title>
-          <meta name="description" content="Explore the shared UI components available in the ReactLab system." />
-        </Helmet>
         <header className="p-doc-page__header">
           <h2 className="p-doc-page__title">Components Overview</h2>
           <p className="p-doc-page__description">
@@ -50,9 +45,6 @@ export default function Documentation() {
   if (!registry) {
     return (
       <div className="p-doc-page">
-        <Helmet>
-          <title>Documentation Not Found | React Lab</title>
-        </Helmet>
         <header className="p-doc-page__header">
           <h2 className="p-doc-page__title">404</h2>
           <p className="p-doc-page__description">Documentation not found for "{docId}"</p>
@@ -64,13 +56,5 @@ export default function Documentation() {
     );
   }
 
-  return (
-    <>
-      <Helmet>
-        <title>{`${registry.title} Component | React Lab`}</title>
-        <meta name="description" content={registry.description || `Documentation and examples for the ${registry.title} component.`} />
-      </Helmet>
-      <DocPage registry={registry} />
-    </>
-  );
+  return <DocPage registry={registry} />;
 }

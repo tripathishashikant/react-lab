@@ -33,7 +33,15 @@ const SEO = ({
       title = `${feature.title} | ${siteName}`;
       description = feature.description || description;
     } else if (docPage) {
-      title = `${docPage.title || 'Documentation'} | ${siteName}`;
+      const docId = lastMatch.params?.docId;
+      if (docId) {
+        // We need to import getDocById or just title-case the ID if we want to avoid imports
+        // But importing is better for accuracy.
+        const titleCase = (s) => s.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        title = `${titleCase(docId)} Component | ${siteName}`;
+      } else {
+        title = `Components Overview | ${siteName}`;
+      }
     }
   }
 
