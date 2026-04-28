@@ -7,5 +7,5 @@ module.exports = {
   transform: {
     '^.+\\.(js|jsx)$': 'babel-jest',
   },
-  setupFilesAfterEnv: ['@testing-library/jest-dom/jest-globals'],
+  setupFilesAfterEnv: ['@testing-library/jest-dom/jest-globals', '<rootDir>/src/setupTests.js'],
 };
