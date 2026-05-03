@@ -1,4 +1,3 @@
-import { render, waitFor } from '@testing-library/react';
 import { createMemoryRouter, RouterProvider } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import SEO from '@/shared/components/seo/SEO';

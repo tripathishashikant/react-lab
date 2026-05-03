@@ -2,13 +2,33 @@
 
 .c-code {
   position: relative;
+  background-color: var(--color-surface-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  overflow: hidden;
 
   &__button {
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: var(--space-sm);
+    right: var(--space-sm);
     z-index: functions.z(base);
-    color: var(--color-text);
+    color: var(--color-text-muted);
+    background: transparent;
+    border: none;
     cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+
+    &:hover {
+      background-color: var(--color-surface);
+      color: var(--color-text);
+    }
+  }
+
+  &__loading {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    padding: var(--space-md);
   }
 }

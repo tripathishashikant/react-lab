@@ -7,12 +7,11 @@ import Logo from "@/shared/components/logo/Logo";
 function Sidebar() {
   return (
     <aside className="l-sidebar">
-      <div className="l-sidebar__logo">
+      <header className="l-sidebar__header">
         <Link to="/" className="l-sidebar__logo-link" aria-label="Go to homepage">
           <Logo />
         </Link>
-      </div>
-      <div className="l-sidebar__divider"></div>
+      </header>
       <nav className="l-sidebar__nav">
         {sidebarMenu.map((feature) => (
           <NavLink

@@ -18,6 +18,7 @@
   --text-lg: 1.8rem;
   --text-xl: 2.2rem;
   --text-2xl: 2.8rem;
+  --font-size-xs: var(--text-xs);
 
   /* FONT WEIGHTS */
   --fw-regular: 400;
@@ -30,6 +31,7 @@
 
   /* BORDER */
   --color-border: var(--color-tuna);
+  --color-border-subtle: var(--color-tuna);
 
   /* PRIMARY */
   --color-primary: var(--color-mariner);
@@ -59,6 +61,11 @@
 
   --color-error: var(--color-red);
   --color-error-soft: rgba(239, 68, 68, 0.1);
+  --color-danger: var(--color-error);
+  --color-danger-soft: var(--color-error-soft);
+
+  /* HEADER */
+  --header-height: 6.4rem;
 
   /* TRANSITIONS */
   --transition-fast: 0.2s ease;

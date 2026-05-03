@@ -2,11 +2,19 @@
 
 .l-sidebar {
   width: 24rem;
-  padding: var(--space-md);
   background: var(--color-surface);
   border-right: 1px solid var(--color-border);
   display: flex;
   flex-direction: column;
+
+  &__header {
+    height: var(--header-height);
+    padding: 0 var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   &__divider {
     height: 1px;
@@ -24,6 +32,7 @@
   }
 
   &__nav {
+    padding: var(--space-md);
     @include abstract.flex(flex-start, flex-start, column, var(--space-xs));
     flex-grow: 1;
   }
@@ -42,6 +51,7 @@
   }
 
   &__footer {
+    padding: var(--space-md);
     margin-top: auto;
     text-align: center;
     font-size: var(--font-size-xs);

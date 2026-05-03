@@ -1,15 +1,35 @@
-[data-theme="light"] {
-  --color-bg: var(--color-ghost-white);
-  --color-surface: var(--color-white);
-  --color-surface-light: var(--color-catskill-white);
+:root[data-theme="light"] {
+  /* BACKGROUND */
+  --color-bg: var(--color-catskill-white);
+  --color-surface: var(--color-ghost-white);
+  --color-surface-light: var(--color-white);
 
+  /* TEXT */
   --color-text: var(--color-black);
   --color-text-muted: var(--color-shuttle-gray);
 
+  /* BORDER */
   --color-border: var(--color-gallery);
+  --color-border-subtle: #cbd5e1; // Slightly darker for subtle but clear lines
 
+  /* PRIMARY */
   --color-primary: var(--color-dark-orange);
+
+  /* BADGE */
   --color-primary-soft: var(--color-dark-orange-10);
 
-  --color-counter-text: var(--color-ebony-clay);
+  /* ALERT COLORS */
+  --color-info: var(--color-dodger-blue);
+  --color-info-soft: var(--color-dodger-blue-10);
+
+  --color-success: var(--color-islamic-green);
+  --color-success-soft: var(--color-islamic-green-10);
+
+  --color-warning: var(--color-marigold);
+  --color-warning-soft: var(--color-marigold-10);
+
+  --color-error: var(--color-red);
+  --color-error-soft: rgba(239, 68, 68, 0.1);
+  --color-danger: var(--color-error);
+  --color-danger-soft: var(--color-error-soft);
 }

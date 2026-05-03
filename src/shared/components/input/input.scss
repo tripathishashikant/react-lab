@@ -20,6 +20,8 @@
 
   &__field {
     @include abstract.input-base;
+    background-color: var(--color-surface-light);
+    border-color: var(--color-border-subtle);
     transition: var(--transition-fast);
 
     &::placeholder {

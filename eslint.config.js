@@ -30,6 +30,10 @@ export default [
         ...globals.browser,
         ...globals.node,
         ...globals.jest,
+        render: 'readonly',
+        screen: 'readonly',
+        fireEvent: 'readonly',
+        waitFor: 'readonly',
       },
     },
     rules: {
