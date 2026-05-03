@@ -9,6 +9,7 @@ import { codeRegistry } from '@/docs/system/registry/code/index';
 import { tableRegistry } from '@/docs/system/registry/table/index';
 import { modalRegistry } from '@/docs/system/registry/modal/index';
 import { logoRegistry } from '@/docs/system/registry/logo/index';
+import { themeSwitcherRegistry } from '@/docs/system/registry/theme-switcher/index';
 
 export const docsRegistry = [
   buttonRegistry,
@@ -21,7 +22,8 @@ export const docsRegistry = [
   codeRegistry,
   tableRegistry,
   modalRegistry,
-  logoRegistry
+  logoRegistry,
+  themeSwitcherRegistry
 ];
 
 export function getDocById(id) {

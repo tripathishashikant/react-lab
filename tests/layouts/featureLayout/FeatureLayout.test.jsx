@@ -1,4 +1,3 @@
-import { render, screen } from '@testing-library/react';
 import { MemoryRouter, useMatches, useNavigate } from 'react-router-dom';
 import FeatureLayout from '@/layouts/featureLayout/FeatureLayout';
 
